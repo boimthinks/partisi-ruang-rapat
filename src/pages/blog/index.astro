@@ -1,0 +1,78 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import CtaSection from '../../components/CtaSection.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { BookOpen, ArrowRight } from '@lucide/astro';
+
+const blogArtikel = await getCollection('artikel', ({ data }) => data.label === 'blog');
+blogArtikel.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const schemaBreadcrumb = {
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": "https://partisiruangrapat.web.id/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog & Edukasi",
+      "item": "https://partisiruangrapat.web.id/blog/"
+    }
+  ]
+};
+---
+
+<Layout
+  title="Blog & Wawasan Akustik Ruang Rapat | CV Pireki Asia"
+  description="Kumpulan artikel edukatif, panduan peredam suara, tips pemilihan material movable wall dan pintu lipat ruang rapat dari tim ahli CV Pireki Asia."
+  schemaExtra={[schemaBreadcrumb]}
+>
+  <section class="py-12 lg:py-20 bg-[#0a1428] border-b border-white/10 bg-blueprint">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00e5ff]/10 text-[#00e5ff] text-xs font-mono mb-3">
+          <BookOpen class="w-3.5 h-3.5" />
+          <span>EDUKASI, TIPS & WAWASAN AKUSTIK</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          Blog Partisi Ruang Rapat
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base mt-4 leading-relaxed">
+          Ketahui strategi peredaman suara, perbandingan sistem mekanik, dan tips arsitektural untuk memaksimalkan privasi serta efisiensi anggaran ruangan Anda.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic Blog Cards Grid -->
+  <section class="py-16 bg-[#070e1e]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      {blogArtikel.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {blogArtikel.map((item) => (
+            <BlogCard artikel={item} />
+          ))}
+        </div>
+      ) : (
+        <div class="glass-panel rounded-2xl p-12 text-center border border-white/10 max-w-xl mx-auto space-y-3">
+          <p class="text-slate-300 text-sm">
+            Artikel wawasan dan edukasi tata ruang sedang dipersiapkan.
+          </p>
+          <a href="/proyek/" class="inline-flex items-center gap-1 text-xs font-mono text-[#00e5ff] hover:underline">
+            <span>Lihat Dokumentasi Proyek Terpasang</span>
+            <ArrowRight class="w-3.5 h-3.5" />
+          </a>
+        </div>
+      )}
+
+    </div>
+  </section>
+
+  <CtaSection />
+</Layout>

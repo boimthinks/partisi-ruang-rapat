@@ -1,0 +1,278 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CtaSection from '../components/CtaSection.astro';
+import ProyekTerkait from '../components/ProyekTerkait.astro';
+import { GraduationCap, BookOpen, CheckCircle2, ArrowLeft, Phone, Layers } from '@lucide/astro';
+
+const schemaService = {
+  "@type": "Service",
+  "@id": "https://partisiruangrapat.web.id/kampus/#service",
+  "name": "Pemasangan Partisi Ruang Sidang Senat & Aula Kampus",
+  "serviceType": "Instalasi Penyekat Ruang Modular Aula & Sidang Akademik Kampus",
+  "description": "Penyekat fleksibel partisi geser dan lipat untuk ruang sidang senat, aula seminar, laboratorium ujian OSCE, dan ruang rapat kampus universitas bergaransi resmi.",
+  "provider": {
+    "@id": "https://partisiruangrapat.web.id/#organization"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Indonesia"
+  },
+  "image": "https://partisiruangrapat.web.id/img/partisi-ruang-rapat-kampus_poco.webp"
+};
+
+const schemaBreadcrumb = {
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": "https://partisiruangrapat.web.id/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Penerapan Partisi",
+      "item": "https://partisiruangrapat.web.id/#sektor"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Kampus & Fasilitas Pendidikan",
+      "item": "https://partisiruangrapat.web.id/kampus/"
+    }
+  ]
+};
+---
+
+<Layout
+  title="Partisi Ruang Sidang Senat & Aula Rapat Kampus, Sekolah | Pireki"
+  description="Penyekat fleksibel ruang sidang senat, aula seminar, dan ruang rapat kampus universitas. Transformasi ruangan multifungsi bergaransi CV Pireki Asia."
+  ogImage="/img/partisi-ruang-rapat-kampus_poco.webp"
+  schemaExtra={[schemaService, schemaBreadcrumb]}
+>
+  <div class="py-6 bg-[#0a1428] border-b border-white/10 text-xs font-mono">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 text-slate-400">
+      <a href="/" class="hover:text-white flex items-center gap-1">
+        <ArrowLeft class="w-3.5 h-3.5" />
+        <span>Beranda</span>
+      </a>
+      <span>/</span>
+      <span class="text-[#00e5ff]">Kampus & Sekolah</span>
+    </div>
+  </div>
+
+  <section class="py-12 lg:py-20 bg-blueprint">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <div class="lg:col-span-8 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-400/10 text-cyan-300 text-xs font-mono">
+            <GraduationCap class="w-3.5 h-3.5" />
+            <span>UNIVERSITAS, INSTITUT & SEKOLAH UNGGULAN</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Partisi Ruang Sidang Senat, Dekanat & Aula Kampus
+          </h1>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Dunia akademis memerlukan tata ruang yang sangat adaptif. Kampus sering kali harus menyelenggarakan konferensi internasional berskala ratusan peserta di pagi hari, lalu membagi aula yang sama menjadi 3 hingga 4 ruang sidang skripsi atau seminar kelompok pada siang harinya.
+          </p>
+
+          <div class="glass-panel rounded-2xl p-6 border border-white/10 space-y-4">
+            <div class="flex items-center gap-2 text-[#00e5ff] font-mono text-xs uppercase tracking-wider">
+              <BookOpen class="w-4 h-4" />
+              <span>Efisiensi Tata Ruang Pendidikan</span>
+            </div>
+            <h2 class="text-lg font-bold text-white">
+              Mengapa Partisi Movable Wall Ideal untuk Fasilitas Kampus?
+            </h2>
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+              <li class="flex items-start gap-2.5">
+                <CheckCircle2 class="w-4 h-4 text-[#00e5ff] shrink-0 mt-0.5" />
+                <span><strong>Multi-Event Simultan:</strong> Sidang terbuka promosi doktor atau rapat dekanat dapat berlangsung tenang tanpa terganggu suara riuh mahasiswa di aula sebelahnya.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <CheckCircle2 class="w-4 h-4 text-[#00e5ff] shrink-0 mt-0.5" />
+                <span><strong>Pengoperasian Praktis oleh Staf:</strong> Menggunakan bearing baja presisi, partisi dapat digeser dan dikunci oleh 1-2 staf operasional kampus dalam hitungan beberapa menit saja.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <CheckCircle2 class="w-4 h-4 text-[#00e5ff] shrink-0 mt-0.5" />
+                <span><strong>Hemat Biaya Konstruksi:</strong> Tidak perlu membangun banyak gedung statis yang jarang terpakai. Cukup manfaatkan satu aula besar dengan sistem sekat fleksibel.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="space-y-4">
+            <h2 class="text-xl font-bold text-white">
+              Klien Institusi Pendidikan Tinggi Nyata Pireki
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="p-4 rounded-xl bg-black/20 border border-white/5 space-y-1">
+                <strong class="text-[#00e5ff] block text-sm">Universitas Airlangga (UNAIR)</strong>
+                <p class="text-xs text-slate-300">
+                  Surabaya — Instalasi aula serbaguna yang dapat disulap menjadi beberapa ruang kuliah dan pelatihan dalam sekejap.
+                </p>
+              </div>
+              <div class="p-4 rounded-xl bg-black/20 border border-white/5 space-y-1">
+                <strong class="text-[#00e5ff] block text-sm">FK UMI Makassar</strong>
+                <p class="text-xs text-slate-300">
+                  Fakultas Kedokteran — Transformasi ruang kelas konvensional menjadi area multifungsi akademik dan ujian OSCE.
+                </p>
+              </div>
+              <div class="p-4 rounded-xl bg-black/20 border border-white/5 space-y-1">
+                <strong class="text-[#00e5ff] block text-sm">Institut Teknologi Del (IT Del)</strong>
+                <p class="text-xs text-slate-300">
+                  Toba, Sumut — Partisi Sorepa kedap suara untuk aula pertemuan di kampus teknologi binaan Luhut B. Pandjaitan.
+                </p>
+              </div>
+              <div class="p-4 rounded-xl bg-black/20 border border-white/5 space-y-1">
+                <strong class="text-[#00e5ff] block text-sm">UINSU Medan & UIN Kediri</strong>
+                <p class="text-xs text-slate-300">
+                  Penyekat ruangan auditorium besar untuk mengakomodasi seminar besar hingga kuliah umum paralel.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="lg:col-span-4 space-y-6">
+          <!-- Foto Visual Fasilitas Kampus 4:3 -->
+          <div class="glass-panel rounded-2xl overflow-hidden border border-white/15 shadow-2xl group">
+            <div class="aspect-[4/3] w-full overflow-hidden bg-black/40 relative">
+              <img
+                src="/img/partisi-ruang-rapat-kampus_poco.webp"
+                alt="Penerapan Partisi Ruang Rapat Aula dan Kampus Pireki"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                width="800"
+                height="600"
+                loading="eager"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#070e1e]/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs">
+                <span class="font-mono text-indigo-300 font-semibold bg-[#070e1e]/90 px-2.5 py-1 rounded border border-indigo-500/30">
+                  Aula & Ruang Sidang Senat
+                </span>
+                <span class="font-mono text-slate-300 text-[11px] bg-black/60 px-2 py-1 rounded">
+                  Pireki
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel rounded-2xl p-6 border border-[#00e5ff]/30 shadow-xl">
+            <h3 class="text-lg font-bold text-white mb-2">
+              Pilihan Tipe untuk Kampus
+            </h3>
+            <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+              Tersedia tipe <strong class="text-white">Sorepa Pro</strong> untuk ruang rapat senat dan boardroom dekan, serta tipe ekonomis <strong class="text-white">Samowa Lipat</strong> untuk ruang kelas/workshop adaptif.
+            </p>
+            <div class="p-3 rounded-lg bg-black/30 border border-white/5 mb-6 text-xs text-emerald-400 font-mono">
+              ✓ Garansi Resmi & Layanan Perawatan Berkala
+            </div>
+            <a
+              href="https://wa.me/6282376737701?text=Halo%20Pireki%2C%20kami%20ingin%20konsultasi%20partisi%20untuk%20ruang%20rapat%2Fseminar%20kampus"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-[#00e5ff] hover:bg-white text-[#070e1e] font-bold text-xs uppercase tracking-wider transition-all"
+            >
+              <Phone class="w-4 h-4" />
+              <span>Konsultasi Proyek Kampus (WA)</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- KONTEN MENDALAM E-E-A-T PENERAPAN KAMPUS -->
+      <div class="mt-16 pt-12 border-t border-white/10 space-y-12">
+
+        <!-- Kebutuhan Ruang Akademis Adaptif -->
+        <div class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Optimalisasi Fasilitas Akademis: Dari Kuliah Akbar Menjadi Ujian Paralel
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Perguruan tinggi dan sekolah unggulan di Indonesia menghadapi dinamika jadwal kegiatan yang sangat variatif sepanjang tahun akademik. Kebutuhan ruangan berkisar dari kuliah umum berkapasitas ratusan mahasiswa baru, sidang senat terbuka, konferensi jurnal internasional, hingga ujian sidang skripsi dan tesis tertutup yang memerlukan ketenangan absolut.
+          </p>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Membangun gedung-gedung khusus terpisah untuk setiap aktivitas menelan biaya investasi konstruksi dan biaya perawatan AC yang sangat boros. Partisi geser Sorepa dan Samowa Pireki memungkinkan pihak rektorat atau yayasan memaksimalkan satu gedung auditorium besar menjadi ruang serbaguna multi-event yang dapat dioperasikan secara bersamaan.
+          </p>
+        </div>
+
+        <!-- Ujian Khusus Medis OSCE di Fakultas Kedokteran -->
+        <div class="space-y-6">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Standar Partisi untuk Ujian Khusus Medis OSCE Fakultas Kedokteran
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Salah satu implementasi paling menuntut tingkat kekedapan audio dan privasi visual adalah ujian Objective Structured Clinical Examination (OSCE) di Fakultas Kedokteran. Setiap stase ujian menuntut isolasi suara ketat agar instruksi penguji dan jawaban mahasiswa calon dokter tidak terdengar ke stase bilik sebelah:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-panel p-5 rounded-xl border border-white/10 space-y-2">
+              <span class="text-[#00e5ff] font-mono text-xs uppercase tracking-wider block">Ujian Klinis</span>
+              <h3 class="text-lg font-bold text-white">Standar Ujian OSCE</h3>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Penyekat ruangan yang kedap suara memastikan setiap stase simulasi klinik berlangsung objektif tanpa kebocoran petunjuk antar bilik ujian.
+              </p>
+            </div>
+
+            <div class="glass-panel p-5 rounded-xl border border-white/10 space-y-2">
+              <span class="text-[#00e5ff] font-mono text-xs uppercase tracking-wider block">Ketahanan Harian</span>
+              <h3 class="text-lg font-bold text-white">Lapisan Anti Gores HPL</h3>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Finishing permukaan menggunakan laminasi HPL tahan benturan, mudah dibersihkan dari debu spidol atau noda, dan tahan terhadap goresan tas mahasiswa.
+              </p>
+            </div>
+
+            <div class="glass-panel p-5 rounded-xl border border-white/10 space-y-2">
+              <span class="text-[#00e5ff] font-mono text-xs uppercase tracking-wider block">Keamanan Gedung</span>
+              <h3 class="text-lg font-bold text-white">Struktur Pengunci Kokoh</h3>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Pengunci mechanical jack atas-bawah menopang modul partisi tetap kaku dan stabil, mencegah goyangan saat ada kerumunan mahasiswa bersandar pada dinding.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rekam Jejak Klien Kampus di Seluruh Indonesia -->
+        <div class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Kepercayaan Nyata dari Institusi Pendidikan Tinggi Nasional
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            CV Pireki Asia bangga menjadi mitra terpercaya bagi perguruan tinggi negeri maupun swasta terkemuka di tanah air:
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+            <div class="p-4 rounded-xl bg-black/30 border border-white/10 space-y-2">
+              <strong class="text-[#00e5ff] block font-mono text-sm">Universitas Airlangga (UNAIR) Surabaya</strong>
+              <p class="text-slate-300 leading-relaxed">
+                Pemasangan sekat geser aula serbaguna yang dapat difungsikan sebagai ruang seminar dekanat dan ruang pelatihan dosen secara fleksibel.
+              </p>
+            </div>
+            <div class="p-4 rounded-xl bg-black/30 border border-white/10 space-y-2">
+              <strong class="text-[#00e5ff] block font-mono text-sm">Fakultas Kedokteran UMI di Makassar</strong>
+              <p class="text-slate-300 leading-relaxed">
+                Penyekat ruangan modular akustik untuk mendukung kebutuhan ujian kompetensi mahasiswa kedokteran dan aula pertemuan akademik fakultas.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <ProyekTerkait
+    aplikasi="kampus"
+    title="Dokumentasi Proyek Partisi Kampus & Gedung Perkuliahan"
+    eyebrow="PORTOFOLIO UNIVERSITAS & AKADEMIK"
+    description="Implementasi penyekat modular fleksibel CV Pireki Asia di perguruan tinggi negeri dan swasta untuk ruang tutorial, sidang dekanat, dan simulasi ujian OSCE."
+  />
+
+  <CtaSection />
+</Layout>

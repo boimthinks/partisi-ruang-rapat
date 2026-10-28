@@ -1,0 +1,51 @@
+# Apache Configuration for partisiruangrapat.web.id
+# Optimized for Astro SSG with trailingSlash: 'always' on cPanel / Shared Hosting
+
+Options -MultiViews
+RewriteEngine On
+RewriteBase /
+
+# 1. Force HTTPS (Keamanan SSL)
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Redirect URL file lama (6 artikel yang dihapus) ke rubrik barunya
+RewriteRule ^proyek/sorepa-pro-perusahaan-tambang-batubara-samarinda/?$ /proyek/ [R=301,L]
+RewriteRule ^proyek/sorepa-prima-hotel-bintang-4-bandung/?$ /proyek/ [R=301,L]
+RewriteRule ^proyek/samowa-persection-kampus-swasta-surabaya/?$ /proyek/ [R=301,L]
+RewriteRule ^teknis/standar-stc-partisi-ruang-rapat/?$ /teknis/material-akustik-60db/ [R=301,L]
+RewriteRule ^teknis/kalkulasi-beban-balok-gantung-partisi/?$ /teknis/sistem-rel-gantung/ [R=301,L]
+RewriteRule ^teknis/panduan-memilih-tipe-partisi-ruangan/?$ /tipe/ [R=301,L]
+RewriteRule ^blog/tren-meeting-room-modular-2026/?$ /blog/ [R=301,L]
+RewriteRule ^blog/mengatasi-ruang-rapat-bocor-suara/?$ /blog/ [R=301,L]
+RewriteRule ^blog/tips-merawat-partisi-geser-ruangan/?$ /blog/ [R=301,L]
+
+# 3. Custom Error Page 404
+ErrorDocument 404 /404.html
+
+# 4. Browser Caching untuk Aset Statis (Meningkatkan Skor Core Web Vitals)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  
+  # HTML Documents (Cache pendek agar update konten cepat terbaca)
+  ExpiresByType text/html "access plus 1 hour"
+  
+  # CSS, JavaScript
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  
+  # Media & Images (WebP, SVG, PNG, ICO)
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  
+  # Plain Text (llms.txt, robots.txt)
+  ExpiresByType text/plain "access plus 1 day"
+</IfModule>
+
+# 5. Gzip / Brotli Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json image/svg+xml
+</IfModule>

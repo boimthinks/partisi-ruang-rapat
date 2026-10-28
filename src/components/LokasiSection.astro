@@ -1,0 +1,83 @@
+---
+import { getCollection } from 'astro:content';
+import { MapPin, Building, ArrowRight } from '@lucide/astro';
+
+const lokasiList = await getCollection('lokasi');
+lokasiList.sort((a, b) => a.data.kota.localeCompare(b.data.kota));
+---
+
+<section class="py-16 lg:py-24 bg-[#070e1e] border-t border-white/10 relative reveal-on-scroll">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <div class="max-w-2xl">
+        <div class="text-[#00e5ff] font-mono text-xs uppercase tracking-widest mb-2 flex items-center gap-2">
+          <MapPin class="w-4 h-4 text-[#00e5ff]" />
+          <span>JANGKAUAN LAYANAN &amp; KANTOR PERWAKILAN</span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Pemasangan Partisi Ruang Rapat di Kota Anda
+        </h2>
+        <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+          CV Pireki Asia melayani survei teknis opening, asistensi struktur balok atas, hingga instalasi oleh teknisi resmi di kota-kota besar Indonesia.
+        </p>
+      </div>
+
+      <div>
+        <a
+          href="/lokasi/"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/15 text-xs font-mono uppercase tracking-wider text-[#00e5ff] hover:text-white transition-colors"
+        >
+          <span>Direktori Wilayah Nasional</span>
+          <ArrowRight class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+
+    <!-- City Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {lokasiList.map((item) => (
+        <div class="glass-panel rounded-2xl overflow-hidden border border-white/10 hover:border-[#00e5ff]/40 transition-all flex flex-col justify-between group">
+          <div>
+            <!-- 4:3 Image Container with clickable link -->
+            <a href={`/lokasi/${item.id}/`} class="block aspect-[4/3] w-full overflow-hidden bg-slate-900 relative">
+              <img
+                src={item.data.image}
+                alt={`Layanan Partisi Ruang Rapat di ${item.data.kota}`}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 bg-[#0a1428]/90 backdrop-blur-md border border-white/10 px-2.5 py-1 rounded text-[11px] font-mono text-[#00e5ff] uppercase tracking-wider flex items-center gap-1.5 shadow-lg">
+                <MapPin class="w-3 h-3" />
+                <span>{item.data.kota}</span>
+              </div>
+              <div class="absolute top-3 right-3 bg-amber-500/20 backdrop-blur-md border border-amber-500/30 px-2.5 py-1 rounded text-[10px] font-mono text-amber-300 uppercase tracking-wider shadow-lg">
+                {item.data.provinsi}
+              </div>
+            </a>
+
+            <!-- Card Body -->
+            <div class="p-6 space-y-3">
+              <a href={`/lokasi/${item.id}/`}>
+                <h3 class="text-xl font-bold text-white group-hover:text-[#00e5ff] transition-colors leading-snug">
+                  Partisi Ruang Rapat {item.data.kota}
+                </h3>
+              </a>
+
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed line-clamp-2">
+                {item.data.description}
+              </p>
+
+              <div class="pt-2 text-xs font-mono text-slate-400">
+                <span class="text-slate-500 block text-[10px] uppercase">Layanan Terdekat:</span>
+                <span class="text-slate-300 truncate block">{item.data.kantorLayanan}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,259 @@
+---
+import { Calculator, CheckCircle2, AlertCircle } from '@lucide/astro';
+---
+
+<section id="kalkulator" class="py-16 lg:py-24 bg-[#0a1428] relative border-y border-white/10 reveal-on-scroll">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00e5ff]/10 text-[#00e5ff] font-mono text-xs mb-3">
+        <Calculator class="w-3.5 h-3.5" />
+        <span>SIMULASI BIAYA & KEBUTUHAN REAL-TIME</span>
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+        Kalkulator Estimasi Partisi Ruang Rapat
+      </h2>
+      <p class="text-slate-300 text-sm mt-2">
+        Masukkan dimensi bukaan serta jumlah plong atau unit partisi untuk mendapatkan simulasi luas total, perkiraan jumlah daun, dan kisaran biaya fabrikasi resmi CV Pireki Asia.
+      </p>
+    </div>
+
+    <div class="max-w-4xl mx-auto glass-panel rounded-2xl p-6 sm:p-10 border border-white/10 shadow-2xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Form Input Dimensi & Plong (7 Cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label for="calc-width" class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5">
+                Lebar Bukaan (m)
+              </label>
+              <div class="relative">
+                <input
+                  type="number"
+                  id="calc-width"
+                  value="6"
+                  min="1"
+                  max="50"
+                  step="0.1"
+                  class="w-full bg-[#070e1e] border border-white/15 rounded-lg px-3 py-3 text-white font-mono focus:border-[#00e5ff] focus:ring-1 focus:ring-[#00e5ff] outline-none text-base"
+                />
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-mono text-slate-400">m</span>
+              </div>
+            </div>
+
+            <div>
+              <label for="calc-height" class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5">
+                Tinggi Bukaan (m)
+              </label>
+              <div class="relative">
+                <input
+                  type="number"
+                  id="calc-height"
+                  value="3"
+                  min="1"
+                  max="15"
+                  step="0.1"
+                  class="w-full bg-[#070e1e] border border-white/15 rounded-lg px-3 py-3 text-white font-mono focus:border-[#00e5ff] focus:ring-1 focus:ring-[#00e5ff] outline-none text-base"
+                />
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-mono text-slate-400">m</span>
+              </div>
+            </div>
+
+            <div>
+              <label for="calc-plong" class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-1.5">
+                Jumlah Plong / Unit
+              </label>
+              <div class="relative">
+                <input
+                  type="number"
+                  id="calc-plong"
+                  value="1"
+                  min="1"
+                  max="50"
+                  step="1"
+                  class="w-full bg-[#070e1e] border border-white/15 rounded-lg px-3 py-3 text-white font-mono focus:border-[#00e5ff] focus:ring-1 focus:ring-[#00e5ff] outline-none text-base"
+                />
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-mono text-slate-400">plong</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pilihan Tipe -->
+          <div>
+            <label class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-2">
+              Kebutuhan Peredam Suara
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <label class="cursor-pointer p-3 rounded-lg border border-[#00e5ff]/40 bg-[#00e5ff]/10 flex flex-col justify-between transition-all has-[:checked]:border-[#00e5ff] has-[:checked]:bg-[#00e5ff]/20">
+                <input type="radio" name="calc-type" value="sorepa-pro" checked class="sr-only" />
+                <span class="text-xs font-bold text-white block">Sorepa Pro</span>
+                <span class="text-[11px] text-[#00e5ff] font-mono mt-1">60 dB Kedap Suara</span>
+              </label>
+
+              <label class="cursor-pointer p-3 rounded-lg border border-white/15 bg-black/20 flex flex-col justify-between transition-all has-[:checked]:border-[#00e5ff] has-[:checked]:bg-[#00e5ff]/20">
+                <input type="radio" name="calc-type" value="samowa" class="sr-only" />
+                <span class="text-xs font-bold text-white block">Samowa Lipat</span>
+                <span class="text-[11px] text-slate-300 font-mono mt-1">Semi Redam</span>
+              </label>
+
+              <label class="cursor-pointer p-3 rounded-lg border border-white/15 bg-black/20 flex flex-col justify-between transition-all has-[:checked]:border-[#00e5ff] has-[:checked]:bg-[#00e5ff]/20">
+                <input type="radio" name="calc-type" value="nice" class="sr-only" />
+                <span class="text-xs font-bold text-white block">Nice Partition</span>
+                <span class="text-[11px] text-slate-300 font-mono mt-1">Visual Only</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="text-xs text-slate-400 flex items-center gap-2">
+            <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0" />
+            <span>Rumus: (Lebar × Tinggi) × Jumlah Plong Unit Partisi.</span>
+          </div>
+        </div>
+
+        <!-- Output Box (5 Cols) -->
+        <div class="lg:col-span-5 bg-[#070e1e] p-6 rounded-xl border border-white/10 space-y-5">
+          <div class="flex items-center justify-between border-b border-white/10 pb-3">
+            <h3 class="font-mono text-xs uppercase tracking-wider text-slate-400">
+              Hasil Estimasi Kebutuhan
+            </h3>
+            <span id="out-summary" class="font-mono text-[11px] text-[#00e5ff]">
+              1 Plong Bukaan
+            </span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <div class="text-xs text-slate-400">Total Luas Partisi:</div>
+              <div id="out-area" class="text-2xl font-bold font-mono text-white">18.0 m²</div>
+              <div id="out-sub-area" class="text-[11px] font-mono text-slate-500 mt-0.5">18.0 m² / plong</div>
+            </div>
+            <div>
+              <div class="text-xs text-slate-400">Estimasi Daun:</div>
+              <div id="out-panels" class="text-2xl font-bold font-mono text-[#00e5ff]">6 Daun</div>
+              <div id="out-sub-panels" class="text-[11px] font-mono text-slate-500 mt-0.5">6 Daun / plong</div>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-white/10 space-y-1.5">
+            <div class="text-xs text-slate-400">Perkiraan Biaya Fabrikasi Partisi:</div>
+            <div id="out-price" class="text-xl sm:text-2xl font-black font-mono text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-[#00e5ff]">
+              Rp 39.600.000 - Rp 50.400.000
+            </div>
+            <div class="text-[11px] text-slate-400" id="out-unit-rate">
+              Acuan Tarif: Rp 2.200.000 - Rp 2.800.000 / m²
+            </div>
+          </div>
+
+          <!-- Keterangan Batasan Biaya -->
+          <div class="p-3.5 rounded-lg bg-amber-500/10 border border-amber-500/25 text-xs text-amber-200/95 leading-relaxed">
+            <div class="flex items-start gap-2">
+              <AlertCircle class="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+              <div>
+                <strong class="text-amber-300 block mb-0.5">Keterangan Biaya:</strong>
+                Estimasi ini <strong>hanya harga partisi</strong> (daun partisi, rel gantung, dan mekanisme pengunci). <strong>Tidak termasuk</strong> harga ongkos kirim dan harga teknisi pemasangan partisi ke lokasi.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function setupCalculator() {
+    const inputW = document.getElementById('calc-width') as HTMLInputElement | null;
+    const inputH = document.getElementById('calc-height') as HTMLInputElement | null;
+    const inputPlong = document.getElementById('calc-plong') as HTMLInputElement | null;
+    const outArea = document.getElementById('out-area');
+    const outSubArea = document.getElementById('out-sub-area');
+    const outPanels = document.getElementById('out-panels');
+    const outSubPanels = document.getElementById('out-sub-panels');
+    const outPrice = document.getElementById('out-price');
+    const outUnitRate = document.getElementById('out-unit-rate');
+    const outSummary = document.getElementById('out-summary');
+
+    if (!inputW || !inputH || !inputPlong || !outArea || !outPanels || !outPrice) return;
+
+    function formatRupiah(num: number): string {
+      return 'Rp ' + Math.round(num).toLocaleString('id-ID');
+    }
+
+    function recalculate() {
+      const w = parseFloat(inputW?.value || '0');
+      const h = parseFloat(inputH?.value || '0');
+      const rawPlong = parseInt(inputPlong?.value || '1', 10);
+      const plong = isNaN(rawPlong) || rawPlong < 1 ? 1 : rawPlong;
+
+      const selectedTypeEl = document.querySelector('input[name="calc-type"]:checked') as HTMLInputElement | null;
+      const type = selectedTypeEl?.value || 'sorepa-pro';
+
+      if (isNaN(w) || isNaN(h) || w <= 0 || h <= 0) return;
+
+      // Hitungan: (lebar x tinggi) x jumlah plong
+      const areaPerPlong = w * h;
+      const totalArea = areaPerPlong * plong;
+      
+      outArea.textContent = `${totalArea.toFixed(1)} m²`;
+      if (outSubArea) {
+        outSubArea.textContent = plong > 1 
+          ? `(${areaPerPlong.toFixed(1)} m² × ${plong} plong)` 
+          : `${areaPerPlong.toFixed(1)} m² / plong`;
+      }
+
+      if (outSummary) {
+        outSummary.textContent = `${plong} Plong Bukaan (${w}m × ${h}m)`;
+      }
+
+      // Standar lebar modul panel partisi ~0.9m - 1.1m per plong
+      const panelsPerPlong = Math.max(2, Math.round(w / 1.0));
+      const totalPanels = panelsPerPlong * plong;
+
+      outPanels.textContent = `${totalPanels} Daun`;
+      if (outSubPanels) {
+        outSubPanels.textContent = plong > 1 
+          ? `${panelsPerPlong} Daun / plong` 
+          : `${panelsPerPlong} Daun total`;
+      }
+
+      let minRate = 2200000;
+      let maxRate = 2800000;
+      let rateText = 'Acuan Tarif: Rp 2.200.000 - Rp 2.800.000 / m²';
+
+      if (type === 'samowa') {
+        minRate = 1758000;
+        maxRate = 1758000;
+        rateText = 'Acuan Tarif: ± Rp 1.758.000 / m²';
+      } else if (type === 'nice') {
+        minRate = 1378000;
+        maxRate = 1378000;
+        rateText = 'Acuan Tarif: ± Rp 1.378.000 / m²';
+      }
+
+      if (minRate === maxRate) {
+        outPrice.textContent = `± ${formatRupiah(totalArea * minRate)}`;
+      } else {
+        outPrice.textContent = `${formatRupiah(totalArea * minRate)} - ${formatRupiah(totalArea * maxRate)}`;
+      }
+
+      if (outUnitRate) {
+        outUnitRate.textContent = rateText;
+      }
+    }
+
+    inputW.addEventListener('input', recalculate);
+    inputH.addEventListener('input', recalculate);
+    inputPlong.addEventListener('input', recalculate);
+    document.querySelectorAll('input[name="calc-type"]').forEach((r) => {
+      r.addEventListener('change', recalculate);
+    });
+
+    recalculate();
+  }
+
+  document.addEventListener('astro:page-load', setupCalculator);
+</script>

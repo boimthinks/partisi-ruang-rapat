@@ -1,0 +1,123 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import CtaSection from '../../components/CtaSection.astro';
+import { Cpu, ArrowRight, Calendar, Tag, ShieldCheck } from '@lucide/astro';
+
+const teknisArtikel = await getCollection('artikel', ({ data }) => data.label === 'teknis');
+// Urutkan tanggal terbaru
+teknisArtikel.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const schemaBreadcrumb = {
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": "https://partisiruangrapat.web.id/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Dokumentasi Teknis",
+      "item": "https://partisiruangrapat.web.id/teknis/"
+    }
+  ]
+};
+---
+
+<Layout
+  title="Standar Teknis & Akustik Partisi Ruang Rapat | Pireki"
+  description="Kajian teknis partisi ruang rapat kedap suara 60 dB: sistem rel gantung tanpa rel lantai, Rockwool density 80 kg/m³, dan mekanisme jack mekanik."
+  schemaExtra={[schemaBreadcrumb]}
+>
+  <section class="py-12 lg:py-20 bg-[#0a1428] border-b border-white/10 bg-blueprint">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00e5ff]/10 text-[#00e5ff] text-xs font-mono mb-3">
+          <Cpu class="w-3.5 h-3.5" />
+          <span>SPESIFIKASI & OTORITAS TEKNIS</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          Panduan Teknis Partisi Ruang Rapat
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base mt-4 leading-relaxed">
+          Transparansi dan kejujuran spesifikasi adalah prioritas kami. Di sini Anda dapat mempelajari perhitungan teknis beban gantung, densitas material peredam, dan detail mekanis produk Pireki.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic Cardview from Content Collection -->
+  <section class="py-16 bg-[#070e1e]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {teknisArtikel.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {teknisArtikel.map((item) => (
+            <div class="glass-panel rounded-2xl overflow-hidden border border-white/10 hover:border-[#00e5ff]/40 transition-all flex flex-col justify-between group shadow-xl">
+              {item.data.image && (
+                <a href={`/teknis/${item.id}/`} class="block aspect-[4/3] w-full overflow-hidden bg-black/40 relative">
+                  <img
+                    src={item.data.image}
+                    alt={item.data.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#070e1e]/80 via-transparent to-transparent"></div>
+                </a>
+              )}
+              <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between gap-2 mb-4">
+                    <span class="text-[11px] font-mono text-[#00e5ff] bg-[#00e5ff]/10 px-2.5 py-1 rounded uppercase tracking-wider">
+                      {item.data.aplikasi}
+                    </span>
+                    {item.data.tipe && (
+                      <span class="text-[11px] font-mono text-slate-400">
+                        {item.data.tipe}
+                      </span>
+                    )}
+                  </div>
+                  <a href={`/teknis/${item.id}/`} class="block">
+                    <h2 class="text-xl sm:text-2xl font-bold text-white group-hover:text-[#00e5ff] transition-colors mb-3">
+                      {item.data.title}
+                    </h2>
+                  </a>
+                  <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
+                    {item.data.description}
+                  </p>
+                </div>
+
+                <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                  <span class="text-xs font-mono text-slate-400">
+                    {new Intl.DateTimeFormat('id-ID', { dateStyle: 'medium' }).format(item.data.date)}
+                  </span>
+                  <a
+                    href={`/teknis/${item.id}/`}
+                    class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[#00e5ff] group-hover:translate-x-1 transition-transform"
+                  >
+                    <span>Baca Selengkapnya</span>
+                    <ArrowRight class="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div class="glass-panel rounded-2xl p-12 text-center border border-white/10 max-w-xl mx-auto space-y-3">
+          <p class="text-slate-300 text-sm">
+            Artikel panduan teknis rekayasa struktur dan akustik sedang dipersiapkan.
+          </p>
+          <a href="/tipe/" class="inline-flex items-center gap-1 text-xs font-mono text-[#00e5ff] hover:underline">
+            <span>Lihat Spesifikasi Tipe Partisi</span>
+            <ArrowRight class="w-3.5 h-3.5" />
+          </a>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <CtaSection />
+</Layout>

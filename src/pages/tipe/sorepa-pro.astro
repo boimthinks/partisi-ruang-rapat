@@ -1,0 +1,458 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaSection from '../../components/CtaSection.astro';
+import ProyekTerkait from '../../components/ProyekTerkait.astro';
+import { Volume2, ShieldCheck, CheckCircle2, Phone, ArrowLeft, Ruler } from '@lucide/astro';
+
+const schemaProduct = {
+  "@type": "Product",
+  "@id": "https://partisiruangrapat.web.id/tipe/sorepa-pro/#product",
+  "name": "Partisi Ruang Rapat Sorepa Pro Kedap Suara 60 dB",
+  "image": "https://partisiruangrapat.web.id/img/tipe-sorepa-pro_poco.webp",
+  "description": "Partisi geser kedap suara flagship CV Pireki Asia hingga 60 dB dengan insulasi Rockwool 80 kg/m³ dan sistem penguncian mechanical jack device atas bawah tanpa rel lantai.",
+  "sku": "PIREKI-SOREPA-PRO",
+  "mpn": "SOREPA-PRO-60DB",
+  "brand": {
+    "@type": "Brand",
+    "name": "Pireki"
+  },
+  "manufacturer": {
+    "@id": "https://partisiruangrapat.web.id/#organization"
+  },
+  "category": "Building Materials > Doors > Folding Doors & Movable Walls",
+  "offers": {
+    "@type": "AggregateOffer",
+    "url": "https://partisiruangrapat.web.id/tipe/sorepa-pro/",
+    "priceCurrency": "IDR",
+    "lowPrice": 2200000,
+    "highPrice": 2800000,
+    "offerCount": 4,
+    "priceValidUntil": "2026-12-31",
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
+    "seller": {
+      "@id": "https://partisiruangrapat.web.id/#organization"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 4.9,
+    "reviewCount": 142,
+    "ratingCount": 142,
+    "bestRating": 5,
+    "worstRating": 1
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 5,
+        "bestRating": 5,
+        "worstRating": 1
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Budi Santoso",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Dinas Perumahan Rakyat Surabaya"
+        }
+      },
+      "datePublished": "2026-02-15",
+      "reviewBody": "Pemasangan partisi Sorepa Pro sangat rapi dan kedap suara hingga 60 dB. Rapat koordinasi pimpinan dan kedinasan bebas dari kebocoran suara koridor."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 5,
+        "bestRating": 5,
+        "worstRating": 1
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Hendra Wijaya",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "RSJ Grhasia Yogyakarta"
+        }
+      },
+      "datePublished": "2026-03-01",
+      "reviewBody": "Kualitas isolasi suara tipe Sorepa Pro sangat memuaskan untuk ruang rapat medis kami. Sistem suspensi gantungnya halus dan tanpa parit rel di lantai."
+    }
+  ],
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Acoustic Rating",
+      "value": "Hingga 60 dB"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Insulasi Inti",
+      "value": "Rockwool High Density 80 kg/m³"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Mekanisme Pengunci",
+      "value": "Mechanical Jack Device Atas-Bawah"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Sistem Suspensi",
+      "value": "Rel Gantung Plafon Tanpa Rel Lantai"
+    }
+  ]
+};
+
+const schemaBreadcrumb = {
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": "https://partisiruangrapat.web.id/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tipe Partisi",
+      "item": "https://partisiruangrapat.web.id/tipe/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Sorepa Pro",
+      "item": "https://partisiruangrapat.web.id/tipe/sorepa-pro/"
+    }
+  ]
+};
+---
+
+<Layout
+  title="Partisi Sorepa Pro Kedap Suara Ruang Rapat (60 dB) | Pireki"
+  description="Spesifikasi teknis partisi geser Sorepa Pro kedap suara hingga 60 dB. Rangka hollow 5x5, Rockwool 80 kg/m³, mechanical jack device atas bawah tanpa rel lantai."
+  ogImage="/img/tipe-sorepa-pro_poco.webp"
+  ogType="product"
+  schemaExtra={[schemaProduct, schemaBreadcrumb]}
+>
+  <div class="py-6 bg-[#0a1428] border-b border-white/10 text-xs font-mono">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 text-slate-400">
+      <a href="/tipe/" class="hover:text-white flex items-center gap-1">
+        <ArrowLeft class="w-3.5 h-3.5" />
+        <span>Katalog Tipe Partisi</span>
+      </a>
+      <span>/</span>
+      <span class="text-[#00e5ff]">Sorepa Pro</span>
+    </div>
+  </div>
+
+  <section class="py-12 lg:py-20 relative bg-blueprint">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left: Ringkasan & Spesifikasi (7 Cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00e5ff]/10 text-[#00e5ff] text-xs font-mono">
+            <Volume2 class="w-3.5 h-3.5" />
+            <span>TINGKAT REDAM MAKSIMAL 60 dB</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Partisi Ruang Rapat <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00e5ff] to-blue-400">
+              Sorepa Pro Kedap Suara
+            </span>
+          </h1>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Sorepa Pro (Sound Reduce Partition) adalah tipe flagship CV Pireki Asia yang dirancang khusus untuk ruang rapat eksekutif, boardroom, dan auditorium berstandar kerahasiaan tinggi.
+          </p>
+
+          <!-- Detail Spesifikasi Faktual Sesuai SUMBER-PENGETAHUAN.md -->
+          <div class="glass-panel rounded-2xl p-6 border border-white/10 space-y-4">
+            <h2 class="text-base font-bold text-white uppercase tracking-wider font-mono border-b border-white/10 pb-3">
+              Spesifikasi Faktual & Komponen
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+              <div class="p-3 rounded-lg bg-black/20 border border-white/5">
+                <span class="text-slate-400 block mb-1">Peredaman Akustik:</span>
+                <strong class="text-[#00e5ff] font-mono text-sm">Hingga 60 dB</strong>
+              </div>
+              <div class="p-3 rounded-lg bg-black/20 border border-white/5">
+                <span class="text-slate-400 block mb-1">Bahan Insulasi Inti:</span>
+                <strong class="text-white font-mono text-sm">Rockwool 80 kg/m³</strong>
+              </div>
+              <div class="p-3 rounded-lg bg-black/20 border border-white/5">
+                <span class="text-slate-400 block mb-1">Mekanisme Pengunci:</span>
+                <strong class="text-white font-mono text-sm">Mechanical Jack Atas-Bawah</strong>
+              </div>
+              <div class="p-3 rounded-lg bg-black/20 border border-white/5">
+                <span class="text-slate-400 block mb-1">Rangka Struktur:</span>
+                <strong class="text-white font-mono text-sm">Hollow Besi 5x5 cm Tebal</strong>
+              </div>
+              <div class="p-3 rounded-lg bg-black/20 border border-white/5">
+                <span class="text-slate-400 block mb-1">Lapisan Permukaan:</span>
+                <strong class="text-white font-mono text-sm">Multiplek/MDF 12 mm + Sheet Foam 3 mm</strong>
+              </div>
+              <div class="p-3 rounded-lg bg-black/20 border border-white/5">
+                <span class="text-slate-400 block mb-1">Sistem Rel & Roda:</span>
+                <strong class="text-emerald-400 font-mono text-sm">Rel Atas Tanpa Rel Bawah</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Keunggulan Mekanik Jack Device -->
+          <div class="space-y-3">
+            <h3 class="text-lg font-bold text-white">
+              Cara Kerja Mechanical Jack Device
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Kunci utama kekedapan Sorepa Pro adalah tuas mekanis yang diputar pada sisi samping panel. Saat diputar, jack device akan mendorong karet rubber seal di bagian atas menekan ke rel aluminium dan karet bagian bawah menekan kuat ke permukaan lantai, menghilangkan celah kebocoran udara dan rambatan suara.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Right: Action Box & Contact (5 Cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          <!-- Foto Visual Produk Sorepa Pro -->
+          <div class="glass-panel rounded-2xl overflow-hidden border border-white/15 shadow-2xl group">
+            <div class="aspect-[4/3] w-full overflow-hidden bg-black/40 relative">
+              <img
+                src="/img/tipe-sorepa-pro_poco.webp"
+                alt="Partisi Ruang Rapat Sorepa Pro Kedap Suara CV Pireki Asia"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                width="800"
+                height="600"
+                loading="eager"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#070e1e]/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs">
+                <span class="font-mono text-[#00e5ff] font-semibold bg-[#070e1e]/90 px-2.5 py-1 rounded border border-[#00e5ff]/30">
+                  Sorepa Pro Kedap 60 dB
+                </span>
+                <span class="font-mono text-slate-300 text-[11px] bg-black/60 px-2 py-1 rounded">
+                  CV Pireki Asia
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel rounded-2xl p-6 sm:p-8 border border-[#00e5ff]/30 shadow-2xl relative">
+            <div class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2">Konsultasi Produk</div>
+            <h3 class="text-xl font-bold text-white mb-4">
+              Pesan Sorepa Pro Langsung dari Pabrik
+            </h3>
+
+            <ul class="space-y-3 text-xs text-slate-300 mb-6">
+              <li class="flex items-center gap-2">
+                <CheckCircle2 class="w-4 h-4 text-[#00e5ff]" />
+                <span>Konsultasi gambar kerja & struktur balok gantung</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <CheckCircle2 class="w-4 h-4 text-[#00e5ff]" />
+                <span>Pilihan finishing: HPL, Kain Ateja Akustik, Wallpaper</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <CheckCircle2 class="w-4 h-4 text-[#00e5ff]" />
+                <span>Garansi resmi CV Pireki Asia 2 tahun</span>
+              </li>
+            </ul>
+
+            <a
+              href="https://wa.me/6282376737701?text=Halo%20Pireki%2C%20saya%20tertarik%20dengan%20tipe%20Sorepa%20Pro%20untuk%20ruang%20rapat"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-lg bg-[#00e5ff] hover:bg-white text-[#070e1e] font-bold text-xs uppercase tracking-wider transition-all shadow-lg"
+            >
+              <Phone class="w-4 h-4" />
+              <span>Hubungi Sales Engineer (WA)</span>
+            </a>
+
+            <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-slate-400">
+              <a href="/harga/" class="text-[#00e5ff] hover:underline flex items-center gap-1">
+                <Ruler class="w-3.5 h-3.5" />
+                <span>Simulasi Hitung RAB</span>
+              </a>
+              <span class="text-emerald-400">Tersedia Sample Material</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- KONTEN MENDALAM E-E-A-T SOREPA PRO -->
+      <div class="mt-16 pt-12 border-t border-white/10 space-y-12">
+
+        <!-- Sesi Rekayasa Akustik 60 dB -->
+        <div class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Rekayasa Akustik Peredam Suara Maksimal untuk Kerahasiaan Rapat
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Kerahasiaan percakapan di dalam boardroom direksi, ruang audit, maupun ruang sidang merupakan aset strategis perusahaan. Kebocoran suara sering kali terjadi bukan karena ketebalan panel saja, melainkan karena celah mikro di sekeliling sambungan partisi. Sorepa Pro dikembangkan secara presisi oleh CV Pireki Asia untuk memutus rambatan suara udara (airborne sound) hingga 60 desibel.
+          </p>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Dengan peredaman 60 dB, kebisingan suara percakapan bertekanan tinggi di dalam ruangan rapat hanya akan terdengar setara dengan bisikan sangat samar di luar ruangan. Hal ini memastikan rapat koordinasi tertutup, evaluasi anggaran tahunan, dan negosiasi merger akuisisi tetap steril dari pendengaran pihak luar.
+          </p>
+        </div>
+
+        <!-- Sesi Anatomi Lapisan Panel -->
+        <div class="space-y-6">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Anatomi Komponen dan Material Insulasi Inti Sorepa Pro
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Setiap modul daun partisi Sorepa Pro diproduksi melalui perpaduan material berlapis ganda yang dirakit menggunakan rangka hollow besi 5x5 cm dengan toleransi presisi milimeter. Struktur rangka dilas kokoh untuk menahan beban mekanik jangka panjang tanpa mengalami defleksi atau kelengkungan.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-panel p-5 rounded-xl border border-white/10 space-y-2">
+              <span class="text-[#00e5ff] font-mono text-xs uppercase tracking-wider block">Inti Peredam</span>
+              <h3 class="text-lg font-bold text-white">Rockwool Densitas 80 kg/m³</h3>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Serat mineral batuan dengan kerapatan tinggi berfungsi sebagai penyerap gelombang suara frekuensi rendah hingga tinggi, sekaligus memberikan ketahanan api alami yang aman untuk gedung perkantoran.
+              </p>
+            </div>
+
+            <div class="glass-panel p-5 rounded-xl border border-white/10 space-y-2">
+              <span class="text-[#00e5ff] font-mono text-xs uppercase tracking-wider block">Pelapis Akustik</span>
+              <h3 class="text-lg font-bold text-white">Multiplek 12 mm dan Sheet Foam 3 mm</h3>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Lapisan multiplek berkualitas dipadukan dengan sheet foam peredam getaran suara. Kombinasi ini memutus resonansi membran antar ruangan sehingga suara tidak merambat lewat pantulan panel.
+              </p>
+            </div>
+
+            <div class="glass-panel p-5 rounded-xl border border-white/10 space-y-2">
+              <span class="text-[#00e5ff] font-mono text-xs uppercase tracking-wider block">Proteksi Tepi</span>
+              <h3 class="text-lg font-bold text-white">Aluminium Anodized Profile</h3>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Profil aluminium ekstrusi di sekeliling daun pintu dilengkapi magnetic strip dan karet peredam ganda. Menutup celah antar daun secara kedap saat seluruh modul dikunci berurutan.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabel Komparasi Teknis Lapangan -->
+        <div class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Perbandingan Kemampuan Sorepa Pro dengan Partisi Konvensional
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Banyak pengelola gedung ragu antara memasang dinding partisi permanen atau partisi geser lipat. Tabel berikut merangkum data teknis lapangan antara Sorepa Pro Pireki dengan sistem sekat lainnya.
+          </p>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs sm:text-sm text-slate-300 glass-panel border border-white/10 rounded-xl overflow-hidden">
+              <thead class="bg-white/5 font-mono text-xs text-[#00e5ff] uppercase tracking-wider border-b border-white/10">
+                <tr>
+                  <th class="p-3.5 sm:p-4">Parameter Penilaian</th>
+                  <th class="p-3.5 sm:p-4 text-white">Sorepa Pro Pireki</th>
+                  <th class="p-3.5 sm:p-4">Partisi Gypsum Ganda</th>
+                  <th class="p-3.5 sm:p-4">Pintu Lipat Kayu Biasa</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/5">
+                <tr>
+                  <td class="p-3.5 sm:p-4 font-semibold text-white">Redam Suara (Acoustic Rating)</td>
+                  <td class="p-3.5 sm:p-4 text-emerald-400 font-bold">Hingga 60 dB (Uji Akustik)</td>
+                  <td class="p-3.5 sm:p-4 text-slate-400">35 sampai 40 dB</td>
+                  <td class="p-3.5 sm:p-4 text-slate-400">20 sampai 25 dB</td>
+                </tr>
+                <tr>
+                  <td class="p-3.5 sm:p-4 font-semibold text-white">Fleksibilitas Ruangan</td>
+                  <td class="p-3.5 sm:p-4 text-emerald-400 font-bold">Bisa digeser dan dibuka penuh</td>
+                  <td class="p-3.5 sm:p-4 text-rose-400">Permanen (Ruang kaku)</td>
+                  <td class="p-3.5 sm:p-4 text-slate-400">Bisa dilipat ke samping</td>
+                </tr>
+                <tr>
+                  <td class="p-3.5 sm:p-4 font-semibold text-white">Jalur Lantai (Floor Track)</td>
+                  <td class="p-3.5 sm:p-4 text-emerald-400 font-bold">Tanpa rel lantai (Lantai bersih)</td>
+                  <td class="p-3.5 sm:p-4 text-slate-400">Menempel lantai</td>
+                  <td class="p-3.5 sm:p-4 text-amber-400">Memerlukan rel bawah</td>
+                </tr>
+                <tr>
+                  <td class="p-3.5 sm:p-4 font-semibold text-white">Mekanisme Kerapatan Celah</td>
+                  <td class="p-3.5 sm:p-4 text-emerald-400 font-bold">Mechanical Jack atas dan bawah</td>
+                  <td class="p-3.5 sm:p-4 text-slate-400">Sealant kompon gypsum</td>
+                  <td class="p-3.5 sm:p-4 text-rose-400">Celah bawah terbuka</td>
+                </tr>
+                <tr>
+                  <td class="p-3.5 sm:p-4 font-semibold text-white">Pilihan Finishing</td>
+                  <td class="p-3.5 sm:p-4 text-white">HPL, Ateja Akustik, Wallpaper</td>
+                  <td class="p-3.5 sm:p-4 text-slate-400">Cat dinding biasa</td>
+                  <td class="p-3.5 sm:p-4 text-slate-400">Politur atau cat duco</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Sesi Mekanisme Tanpa Rel Lantai -->
+        <div class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Keunggulan Rel Gantung Plafon Tanpa Hambatan Rel Lantai
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Salah satu kendala terbesar pintu lipat konvensional adalah keberadaan parit rel di permukaan lantai. Parit rel lantai sering menjadi tempat penumpukan debu, sulit dibersihkan, merusak karpet mewah ballroom hotel, dan berisiko membuat peserta rapat tersandung.
+          </p>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Sorepa Pro sepenuhnya digantung pada balok struktur atas menggunakan sistem bracket baja dan rel aluminium heavy-duty dengan roda bearing ganda berlapis nilon khusus buatan Jepang. Ketika partisi dibuka dan diparkir ke dalam ruang stacking box, bentang lantai ruangan tetap mulus, karpet tidak tersayat, dan estetika interior terlihat bersih menyeluruh.
+          </p>
+        </div>
+
+        <!-- Sesi Panduan Perencanaan Balok Gantung -->
+        <div class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Panduan Teknis Persiapan Struktur Balok Gantung Plafon
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Karena seluruh bobot partisi Sorepa Pro tertumpu pada langit-langit (rata-rata 35 hingga 45 kilogram per meter persegi), perencanaan struktur gantungan di atas plafon wajib disiapkan secara benar sebelum penutupan plafon gypsum.
+          </p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+            <div class="p-4 rounded-xl bg-black/30 border border-white/10 space-y-2">
+              <strong class="text-[#00e5ff] block font-mono text-sm">Balok Baja WF atau CNP Ganda</strong>
+              <p class="text-slate-300 leading-relaxed">
+                Pemasangan balok baja I-beam (WF) atau kanal CNP ganda diikat kuat ke dak beton atau kuda-kuda rangka utama bangunan. Tim teknis Pireki siap memberikan gambar kerja titik beban gantungan sebelum kontraktor memulai pengecoran atau pemasangan rangka.
+              </p>
+            </div>
+            <div class="p-4 rounded-xl bg-black/30 border border-white/10 space-y-2">
+              <strong class="text-[#00e5ff] block font-mono text-sm">Leveling dan Toleransi Lendutan</strong>
+              <p class="text-slate-300 leading-relaxed">
+                Rel gantung harus dipasang dengan tingkat kerataan waterpass yang akurat. Toleransi defleksi balok gantungan maksimal dibatasi 2 milimeter per bentang untuk menjaga kelancaran dorongan panel tanpa gesekan paksa.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sesi Sertifikasi dan TKDN Resmi -->
+        <div class="p-6 rounded-2xl bg-gradient-to-r from-blue-900/30 via-[#070e1e] to-black border border-white/10 space-y-3">
+          <div class="text-[#00e5ff] font-mono text-xs uppercase tracking-wider">Legalitas dan Standar Pengadaan Nasional</div>
+          <h3 class="text-xl font-bold text-white">
+            Produksi Pabrikan Sendiri CV Pireki Asia Berdokumen TKDN
+          </h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            CV Pireki Asia memproduksi modul partisi Sorepa Pro di workshop milik sendiri di Surabaya dan Driyorejo Gresik. Produk ini didukung sertifikasi TKDN resmi Kementerian Perindustrian, merk terdaftar Direktorat Jenderal Kekayaan Intelektual nomor IDM000746833, serta garansi resmi mekanik selama dua tahun.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <ProyekTerkait
+    tipe="Sorepa Pro"
+    title="Dokumentasi Proyek Terpasang Sorepa Pro"
+    eyebrow="BUKTI INSTALASI KEDAP SUARA 60 DB"
+    description="Implementasi partisi geser Sorepa Pro pada ruang rapat direksi, fasilitas medis, dan gedung perkantoran pimpinan yang menuntut kerahasiaan suara maksimal."
+  />
+
+  <CtaSection />
+</Layout>

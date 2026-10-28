@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import { Building2, ArrowUpRight } from '@lucide/astro';
+import ProyekCard from './ProyekCard.astro';
+
+interface Props {
+  aplikasi?: 'kantor' | 'hotel' | 'instansi' | 'kampus';
+  tipe?: string;
+  lokasi?: string;
+  title?: string;
+  eyebrow?: string;
+  description?: string;
+  limit?: number;
+}
+
+const {
+  aplikasi,
+  tipe,
+  lokasi,
+  title = 'Dokumentasi Proyek Terpasang Nyata',
+  eyebrow = 'PORTOFOLIO & BUKTI INSTALASI LAPANGAN',
+  description = 'Bukti nyata kualitas fabrikasi dan instalasi partisi CV Pireki Asia yang telah terpasang dan berfungsi optimal.',
+  limit,
+} = Astro.props;
+
+const allProyek = await getCollection('artikel', ({ data }) => data.label === 'proyek');
+
+let filteredProyek = allProyek.filter((item) => {
+  if (aplikasi && item.data.aplikasi !== aplikasi) return false;
+  if (tipe && item.data.tipe && !item.data.tipe.toLowerCase().includes(tipe.toLowerCase())) return false;
+  if (lokasi && item.data.lokasi && !item.data.lokasi.toLowerCase().includes(lokasi.toLowerCase())) return false;
+  return true;
+});
+
+// Fallback to recent projects if filtered by city yielded no results
+if (lokasi && filteredProyek.length === 0) {
+  filteredProyek = allProyek;
+}
+
+filteredProyek.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const displayProyek = limit ? filteredProyek.slice(0, limit) : filteredProyek;
+---
+
+{displayProyek.length > 0 && (
+  <section class="py-14 sm:py-20 bg-[#070e1e] border-t border-white/10 reveal-on-scroll">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+        <div class="max-w-2xl">
+          <div class="text-[#00e5ff] font-mono text-xs uppercase tracking-widest mb-2 flex items-center gap-2">
+            <Building2 class="w-4 h-4 text-[#00e5ff]" />
+            <span>{eyebrow}</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+            {title}
+          </h2>
+          <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
+            {description}
+          </p>
+        </div>
+
+        <a
+          href="/proyek/"
+          class="inline-flex items-center gap-1.5 text-xs font-mono text-[#00e5ff] hover:text-white transition-colors self-start md:self-end shrink-0"
+        >
+          <span>Lihat Semua Proyek ({allProyek.length})</span>
+          <ArrowUpRight class="w-4 h-4" />
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {displayProyek.map((proyek) => (
+          <ProyekCard {proyek} />
+        ))}
+      </div>
+
+    </div>
+  </section>
+)}

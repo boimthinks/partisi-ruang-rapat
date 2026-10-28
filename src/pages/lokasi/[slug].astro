@@ -1,0 +1,267 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import CtaSection from '../../components/CtaSection.astro';
+import ProyekTerkait from '../../components/ProyekTerkait.astro';
+import ProdukGrid from '../../components/ProdukGrid.astro';
+import { ArrowLeft, MapPin, CheckCircle2, Phone, Calculator, ArrowRight, Building, Layers, ShieldCheck } from '@lucide/astro';
+
+export async function getStaticPaths() {
+  const lokasiEntries = await getCollection('lokasi');
+  return lokasiEntries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": entry.data.title,
+  "description": entry.data.description,
+  "serviceType": "Pemasangan Partisi Ruang Rapat Kedap Suara",
+  "provider": {
+    "@type": "Organization",
+    "name": "CV Pireki Asia",
+    "url": "https://partisiruangrapat.web.id/"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": entry.data.kota,
+    "containedInPlace": {
+      "@type": "AdministrativeArea",
+      "name": entry.data.provinsi
+    }
+  }
+};
+---
+
+<Layout
+  title={entry.data.title}
+  description={entry.data.description}
+  ogImage={entry.data.image}
+  schemaExtra={localSchema}
+>
+  <!-- Breadcrumb Bar -->
+  <div class="py-6 bg-[#0a1428] border-b border-white/10 text-xs font-mono">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 text-slate-400">
+      <a href="/lokasi/" class="hover:text-white flex items-center gap-1">
+        <ArrowLeft class="w-3.5 h-3.5" />
+        <span>Wilayah Layanan</span>
+      </a>
+      <span>/</span>
+      <span class="text-[#00e5ff]">{entry.data.kota}</span>
+    </div>
+  </div>
+
+  <article class="py-12 lg:py-20 relative bg-blueprint">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        
+        <!-- Main Column (8 Cols) -->
+        <div class="lg:col-span-8 space-y-8">
+          
+          <!-- Metadata Header -->
+          <div class="space-y-4 pb-6 border-b border-white/10">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-xs font-mono uppercase tracking-wider text-[#00e5ff] bg-[#00e5ff]/10 px-2.5 py-1 rounded flex items-center gap-1">
+                <MapPin class="w-3.5 h-3.5" />
+                <span>Kota: {entry.data.kota}</span>
+              </span>
+              <span class="text-xs font-mono uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded">
+                {entry.data.provinsi}
+              </span>
+            </div>
+
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              {entry.data.title}
+            </h1>
+
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              {entry.data.description}
+            </p>
+          </div>
+
+          <!-- Featured Image (Standard 4:3 Ratio) -->
+          <div class="rounded-2xl overflow-hidden border border-white/10 bg-[#0a1428] shadow-2xl relative group">
+            <div class="aspect-[4/3] w-full overflow-hidden bg-slate-900">
+              <img
+                src={entry.data.image}
+                alt={`Layanan Pemasangan Partisi Ruang Rapat di ${entry.data.kota}`}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="eager"
+              />
+            </div>
+            <div class="p-4 bg-[#0a1428]/90 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-slate-300">
+              <div class="flex items-center gap-1.5 text-[#00e5ff]">
+                <Building class="w-4 h-4" />
+                <span>Area: {entry.data.kota}, {entry.data.provinsi}</span>
+              </div>
+              <span class="text-slate-400">CV Pireki Asia</span>
+            </div>
+          </div>
+
+          <!-- City Service Fact Box -->
+          <div class="glass-panel rounded-2xl p-6 sm:p-8 border border-[#00e5ff]/30 space-y-6">
+            <h2 class="text-lg font-bold text-white flex items-center gap-2">
+              <ShieldCheck class="w-5 h-5 text-[#00e5ff]" />
+              <span>Detail Jaringan &amp; Layanan Wilayah {entry.data.kota}</span>
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono">
+              <div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-1.5">
+                <span class="text-slate-400 block">Kantor / Distribusi Terdekat:</span>
+                <span class="text-[#00e5ff] font-bold text-sm block">{entry.data.kantorLayanan}</span>
+              </div>
+              <div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-1.5">
+                <span class="text-slate-400 block">Karakteristik Kebutuhan Gedung:</span>
+                <span class="text-slate-200 font-medium leading-relaxed block">{entry.data.karakteristikGedung}</span>
+              </div>
+            </div>
+
+            <!-- Cakupan Wilayah Tags -->
+            <div class="space-y-2 pt-2 border-t border-white/10">
+              <span class="text-xs font-mono text-slate-400 block">Jangkauan Wilayah &amp; Kawasan Sekitar:</span>
+              <div class="flex flex-wrap gap-2">
+                {entry.data.cakupanWilayah.map((wilayah) => (
+                  <span class="text-[11px] font-mono text-slate-300 bg-white/5 border border-white/10 px-2.5 py-1 rounded">
+                    {wilayah}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <!-- Markdown Article Content -->
+          <div class="article-content glass-panel p-6 sm:p-10 rounded-2xl border border-white/10 shadow-2xl">
+            <Content />
+          </div>
+
+          <!-- Bottom Navigation Link -->
+          <div class="pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+            <a
+              href="/lokasi/"
+              class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-400 hover:text-white"
+            >
+              <ArrowLeft class="w-4 h-4" />
+              <span>Kembali ke Direktori Wilayah</span>
+            </a>
+            <a
+              href="/harga/"
+              class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[#00e5ff] hover:underline"
+            >
+              <span>Simulasi Hitung Biaya Ruang Rapat</span>
+              <ArrowRight class="w-4 h-4" />
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Sticky Sidebar CTA (4 Cols) -->
+        <aside class="lg:col-span-4 space-y-6 sticky top-24">
+          
+          <!-- Fast Action Box -->
+          <div class="glass-panel rounded-2xl p-6 sm:p-8 border border-[#00e5ff]/30 shadow-2xl relative overflow-hidden">
+            <div class="absolute -top-12 -right-12 w-32 h-32 bg-[#00e5ff]/10 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="space-y-4">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00e5ff]/10 border border-[#00e5ff]/20 text-[#00e5ff] text-[11px] font-mono uppercase tracking-wider">
+                <MapPin class="w-3 h-3" />
+                <span>Wilayah {entry.data.kota}</span>
+              </div>
+
+              <h2 class="text-xl font-bold text-white tracking-tight">
+                Konsultasi &amp; Survei Lokasi di {entry.data.kota}
+              </h2>
+
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                Dapatkan estimasi kebutuhan anggaran dan jadwal survei teknisi resmi CV Pireki Asia untuk gedung Anda di {entry.data.kota}.
+              </p>
+
+              <!-- Highlights -->
+              <div class="space-y-2.5 pt-2 text-xs text-slate-300">
+                <div class="flex items-start gap-2">
+                  <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span>Survei pengukuran dimensi opening presisi</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span>Asistensi beban struktur balok gantung WF</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span>Pabrikasi mandiri langsung dari workshop produsen</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span>Garansi resmi mekanikal komponen 1-2 tahun</span>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="space-y-3 pt-4 border-t border-white/10">
+                <a
+                  href={`https://wa.me/6282376737701?text=Halo%20Pireki,%20saya%20ingin%20konsultasi%20pemasangan%20partisi%20ruang%20rapat%20di%20${encodeURIComponent(entry.data.kota)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold text-sm shadow-lg shadow-emerald-500/20 transition-all"
+                >
+                  <Phone class="w-4 h-4" />
+                  <span>WhatsApp Sales Engineer</span>
+                </a>
+
+                <a
+                  href="/harga/"
+                  class="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 text-xs font-mono uppercase tracking-wider transition-colors"
+                >
+                  <Calculator class="w-4 h-4 text-[#00e5ff]" />
+                  <span>Simulasi Hitung RAB</span>
+                </a>
+              </div>
+
+              <div class="text-[11px] font-mono text-slate-400 text-center pt-2">
+                Hotline: <span class="text-white">0823-7673-7701</span> (Antoni)
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Advantage Mini Card -->
+          <div class="glass-panel rounded-2xl p-6 border border-white/10 space-y-3">
+            <h3 class="text-sm font-bold text-white flex items-center gap-2">
+              <Layers class="w-4 h-4 text-[#00e5ff]" />
+              <span>Keunggulan Rel Gantung Pireki</span>
+            </h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Seluruh tipe partisi kami bergerak menggunakan rel atas di plafon tanpa adanya parit di lantai, menjaga karpet tetap bersih dan lantai bebas risiko tersandung.
+            </p>
+          </div>
+
+        </aside>
+
+      </div>
+
+    </div>
+  </article>
+
+  <!-- Section 4 Tipe Partisi Pireki (Sorepa Pro, Sorepa Prima, Samowa Persection, Samowa Lipat) -->
+  <ProdukGrid
+    columns={4}
+    borderTop={true}
+    title={`Pilihan Tipe Partisi Ruang Rapat di ${entry.data.kota}`}
+    eyebrow={`SISTEM & SPESIFIKASI PRODUK PIREKI`}
+    description={`Empat sistem partisi gerak CV Pireki Asia yang dapat disesuaikan dengan kebutuhan akustik, estetika, dan anggaran gedung Anda di ${entry.data.kota}.`}
+  />
+
+  <!-- Relational Project Showcase for this City -->
+  <ProyekTerkait
+    lokasi={entry.data.kota}
+    title={`Dokumentasi Proyek Terpasang di ${entry.data.kota} & Sekitarnya`}
+    description={`Bukti nyata instalasi partisi ruang rapat kedap suara CV Pireki Asia yang telah dipercaya oleh berbagai instansi dan korporasi.`}
+  />
+
+  <CtaSection />
+</Layout>

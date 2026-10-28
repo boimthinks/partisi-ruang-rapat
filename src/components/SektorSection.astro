@@ -1,0 +1,122 @@
+---
+import { Building, Hotel, Landmark, GraduationCap, CheckCircle2, Compass } from '@lucide/astro';
+
+const sektorList = [
+  {
+    title: 'Kantor & Boardroom',
+    tag: 'Korporat & Komersial',
+    icon: Building,
+    href: '/kantor/',
+    image: '/img/partisi-ruang-rapat-kantor_poco.webp',
+    desc: 'Melindungi kerahasiaan rapat direksi, audit keuangan, dan negosiasi kontrak dari kebocoran suara ke area open-space kantor.',
+    specs: ['Kedap Suara 60 dB (Sorepa Pro)', 'Mencegah Sadap & Kebocoran Suara', 'Finishing HPL Mewah Senada Interior'],
+  },
+  {
+    title: 'Hotel & Ballroom',
+    tag: 'Hospitality & MICE',
+    icon: Hotel,
+    href: '/hotel/',
+    image: '/img/partisi-ruang-rapat-hotel_poco.webp',
+    desc: 'Membagi ballroom megah menjadi beberapa ruang pertemuan seminar secara simultan untuk mendongkrak okupansi sewa ruangan.',
+    specs: ['Sistem Rel Gantung Tanpa Rel Lantai', 'Karpet Mewah Tetap Utuh & Rata', 'Kemudahan Buka-Tutup Staf Banquet'],
+  },
+  {
+    title: 'Instansi & BUMN',
+    tag: 'Pemerintahan & BUMN',
+    icon: Landmark,
+    href: '/instansi/',
+    image: '/img/partisi-ruang-rapat-instansi_poco.webp',
+    desc: 'Standar ruang sidang komisi, ruang rapat koordinasi tertutup, dan aula dinas dengan legalitas pengadaan resmi nasional.',
+    specs: ['Sertifikasi TKDN Resmi CV Pireki Asia', 'Kualifikasi Pengadaan Gedung Negara', 'Isolasi Akustik Sidang Tertutup'],
+  },
+  {
+    title: 'Kampus & Aula',
+    tag: 'Universitas & Pendidikan',
+    icon: GraduationCap,
+    href: '/kampus/',
+    image: '/img/partisi-ruang-rapat-kampus_poco.webp',
+    desc: 'Optimalisasi fasilitas aula besar menjadi ruang kuliah gabungan, sidang dekanat, maupun ruang ujian skripsi serbaguna.',
+    specs: ['Fleksibilitas Multi-Event Simultan', 'Struktur Kokoh Tahan Beban Siswa/Mhs', 'Opsi Ekonomis Samowa Lipat / Sliding'],
+  },
+];
+---
+
+<section id="sektor" class="py-16 lg:py-24 bg-[#070e1e] relative border-t border-white/10 reveal-on-scroll">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <div class="text-[#00e5ff] font-mono text-xs uppercase tracking-widest mb-2 flex items-center gap-2">
+          <Compass class="w-3.5 h-3.5" />
+          <span>REKOMENDASI INSTALASI & TATA RUANG</span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white">
+          Penerapan Partisi Geser & Lipat di Berbagai Fasilitas
+        </h2>
+      </div>
+      <p class="text-slate-400 text-xs sm:text-sm max-w-md mt-3 md:mt-0 leading-relaxed">
+        Dirancang presisi menjawab standar privasi akustik, estetika interior tanpa rel lantai, dan frekuensi buka-tutup di gedung perkantoran, hotel, instansi, hingga kampus.
+      </p>
+    </div>
+
+    <!-- Grid 4 Sektor -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {sektorList.map((item) => {
+        const IconComponent = item.icon;
+        return (
+          <div class="glass-panel rounded-2xl p-5 sm:p-6 border border-white/10 hover:border-[#00e5ff]/40 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+            <div>
+              <!-- Foto Visual Fasilitas 4:3 (Klik menuju detail penerapan) -->
+              <a
+                href={item.href}
+                class="block relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-5 border border-white/10 hover:border-[#00e5ff]/50 bg-black/40 group/img transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#00e5ff] cursor-pointer"
+                title={`Buka penerapan ${item.title}`}
+              >
+                <img
+                  src={item.image}
+                  alt={`Penerapan Partisi Ruang Rapat ${item.title} CV Pireki Asia`}
+                  class="w-full h-full object-cover group-hover:scale-105 group-hover/img:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  width="600"
+                  height="450"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#070e1e]/90 via-[#070e1e]/20 to-transparent"></div>
+                
+                <div class="absolute top-3 left-3 flex items-center gap-1.5">
+                  <div class="w-8 h-8 rounded-lg bg-[#070e1e]/90 border border-[#00e5ff]/30 text-[#00e5ff] flex items-center justify-center backdrop-blur-md shadow-md">
+                    <IconComponent class="w-4 h-4" />
+                  </div>
+                </div>
+
+                <div class="absolute bottom-2.5 left-3 right-3">
+                  <span class="text-[10px] font-mono uppercase tracking-wider text-slate-300 px-2 py-0.5 rounded bg-[#070e1e]/80 border border-white/10 backdrop-blur-md">
+                    {item.tag}
+                  </span>
+                </div>
+              </a>
+
+              <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-[#00e5ff] transition-colors mb-2">
+                {item.title}
+              </h3>
+
+              <p class="text-xs text-slate-300 leading-relaxed mb-5 line-clamp-3">
+                {item.desc}
+              </p>
+
+              <!-- Fitur Utama -->
+              <ul class="space-y-2 border-t border-white/10 pt-4 text-xs text-slate-300">
+                {item.specs.map((spec) => (
+                  <li class="flex items-start gap-2">
+                    <CheckCircle2 class="w-3.5 h-3.5 text-[#00e5ff] shrink-0 mt-0.5" />
+                    <span class="text-[11px] leading-snug">{spec}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+  </div>
+</section>

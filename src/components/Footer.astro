@@ -1,0 +1,163 @@
+---
+import { ShieldCheck, MapPin, Phone, Mail, Award, CheckCircle2 } from '@lucide/astro';
+import GoogleSourcePreferences from './GoogleSourcePreferences.astro';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t border-white/10 bg-[#040813] text-slate-400 text-xs sm:text-sm pt-16 pb-12 relative overflow-hidden bg-blueprint">
+  <!-- Subtle top glow -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-[#00e5ff]/50 to-transparent"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-12 border-b border-white/10">
+      
+      <!-- Kolom 1: Perusahaan & Kredibilitas -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-2">
+          <img src="/logo-pireki/favicon.svg" alt="Logo Pireki" class="w-8 h-8 rounded object-contain" width="32" height="32" />
+          <span class="text-white font-extrabold tracking-tight text-base uppercase">Partisi Ruang Rapat</span>
+        </div>
+        <p class="text-xs leading-relaxed text-slate-300">
+          Divisi spesialis movable wall & folding door kedap suara untuk ruang rapat korporat, ballroom hotel, dan gedung instansi oleh <strong class="text-white">CV Pireki Asia</strong>.
+        </p>
+
+        <div class="pt-2 space-y-1.5 font-mono text-[11px] text-slate-400">
+          <div class="flex items-center gap-2 text-emerald-400">
+            <CheckCircle2 class="w-3.5 h-3.5" />
+            <span>Merek IDM000746833</span>
+          </div>
+          <div class="flex items-center gap-2 text-cyan-300">
+            <ShieldCheck class="w-3.5 h-3.5" />
+            <span>NIB 0220009462709 (KBLI 16621)</span>
+          </div>
+          <div class="flex items-center gap-2 text-amber-300">
+            <Award class="w-3.5 h-3.5" />
+            <span>Tersertifikasi TKDN In-House</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kolom 2: Produk & Sistem Ruang Rapat -->
+      <div>
+        <h3 class="font-mono text-xs font-bold uppercase tracking-wider text-[#00e5ff] mb-4 flex items-center gap-2">
+          <span class="inline-block w-2 h-0.5 bg-[#00e5ff]"></span> Tipe Partisi
+        </h3>
+        <ul class="space-y-2.5 text-xs">
+          <li>
+            <a href="/tipe/sorepa-pro/" class="hover:text-white transition-colors flex items-center justify-between group">
+              <span>Sorepa Pro (60 dB Peredam)</span>
+              <span class="text-[10px] font-mono text-[#00e5ff] opacity-0 group-hover:opacity-100 transition-opacity">PRO</span>
+            </a>
+          </li>
+          <li>
+            <a href="/tipe/sorepa-prima/" class="hover:text-white transition-colors flex items-center justify-between group">
+              <span>Sorepa Prima</span>
+              <span class="text-[10px] font-mono text-slate-400">Sliding</span>
+            </a>
+          </li>
+          <li>
+            <a href="/tipe/samowa-persection/" class="hover:text-white transition-colors flex items-center justify-between group">
+              <span>Samowa Persection</span>
+              <span class="text-[10px] font-mono text-slate-400">Sliding</span>
+            </a>
+          </li>
+          <li>
+            <a href="/tipe/samowa-lipat/" class="hover:text-white transition-colors flex items-center justify-between group">
+              <span>Samowa Lipat (Semi Redam)</span>
+              <span class="text-[10px] font-mono text-slate-400">Folding</span>
+            </a>
+          </li>
+          <li>
+            <a href="/tipe/" class="hover:text-white transition-colors text-slate-300 font-medium">
+              Lihat Seluruh Katalog &rarr;
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Kolom 3: Navigasi SILO & Teknis -->
+      <div>
+        <h3 class="font-mono text-xs font-bold uppercase tracking-wider text-[#00e5ff] mb-4 flex items-center gap-2">
+          <span class="inline-block w-2 h-0.5 bg-[#00e5ff]"></span> Penerapan Partisi
+        </h3>
+        <ul class="space-y-2.5 text-xs">
+          <li>
+            <a href="/kantor/" class="hover:text-white transition-colors">
+              Partisi Ruang Rapat Kantor
+            </a>
+          </li>
+          <li>
+            <a href="/hotel/" class="hover:text-white transition-colors">
+              Meeting Room Hotel & Ballroom
+            </a>
+          </li>
+          <li>
+            <a href="/instansi/" class="hover:text-white transition-colors">
+              Ruang Sidang Instansi & BUMN
+            </a>
+          </li>
+          <li>
+            <a href="/kampus/" class="hover:text-white transition-colors">
+              Ruang Sidang Senat & Kampus
+            </a>
+          </li>
+          <li>
+            <a href="/blog/" class="hover:text-white transition-colors">
+              Blog & Wawasan Akustik
+            </a>
+          </li>
+          <li>
+            <a href="/lokasi/" class="hover:text-white transition-colors text-[#00e5ff] font-medium">
+              Wilayah Layanan Kota &rarr;
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Kolom 4: Workshop & Layanan Nasional -->
+      <div>
+        <h3 class="font-mono text-xs font-bold uppercase tracking-wider text-[#00e5ff] mb-4 flex items-center gap-2">
+          <span class="inline-block w-2 h-0.5 bg-[#00e5ff]"></span> Pabrik & Kontak
+        </h3>
+        <div class="space-y-3 text-xs leading-relaxed">
+          <div class="flex items-start gap-2.5">
+            <MapPin class="w-4 h-4 text-[#00e5ff] shrink-0 mt-0.5" />
+            <div>
+              <strong class="text-white block">Pabrik & Kantor Pusat:</strong>
+              Jl. Bangkingan Gadung 168, Lakarsantri, Surabaya & Driyorejo, Gresik.
+            </div>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <Phone class="w-4 h-4 text-[#00e5ff] shrink-0" />
+            <a href="https://wa.me/6282376737701" class="hover:text-white font-mono text-slate-200">
+              0823-7673-7701 (WhatsApp)
+            </a>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <Mail class="w-4 h-4 text-[#00e5ff] shrink-0" />
+            <span class="font-mono text-slate-300">sales@pireki.id</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Google Source Preferences Bar -->
+    <GoogleSourcePreferences variant="footer" class="my-8" />
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
+      <div>
+        &copy; {currentYear} <span class="text-white">CV Pireki Asia</span>. Seluruh Hak Cipta Dilindungi.
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="https://pireki.id" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+          Website Induk: pireki.id
+        </a>
+        <span>•</span>
+        <span class="text-slate-300">1.000+ Proyek Seluruh Indonesia</span>
+      </div>
+    </div>
+  </div>
+</footer>

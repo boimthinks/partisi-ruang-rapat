@@ -1,0 +1,264 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import CtaSection from '../../components/CtaSection.astro';
+import TeknisTerkait from '../../components/TeknisTerkait.astro';
+import GoogleSourcePreferences from '../../components/GoogleSourcePreferences.astro';
+import { ArrowLeft, ArrowRight, Calendar, User, Phone, Calculator, CheckCircle2 } from '@lucide/astro';
+
+export async function getStaticPaths() {
+  const teknisEntries = await getCollection('artikel', ({ data }) => data.label === 'teknis');
+  return teknisEntries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const formattedDate = new Intl.DateTimeFormat('id-ID', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+}).format(entry.data.date);
+
+const schemaBreadcrumb = {
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": "https://partisiruangrapat.web.id/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Dokumentasi Teknis",
+      "item": "https://partisiruangrapat.web.id/teknis/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": entry.data.title,
+      "item": `https://partisiruangrapat.web.id/teknis/${entry.id}/`
+    }
+  ]
+};
+
+const schemaArticle = {
+  "@type": "TechArticle",
+  "headline": entry.data.title,
+  "description": entry.data.description,
+  "image": entry.data.image ? `https://partisiruangrapat.web.id${entry.data.image}` : undefined,
+  "datePublished": entry.data.date.toISOString(),
+  "author": {
+    "@type": "Organization",
+    "name": entry.data.author || "Tim Teknis Pireki",
+    "url": "https://partisiruangrapat.web.id/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CV Pireki Asia",
+    "url": "https://partisiruangrapat.web.id/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://partisiruangrapat.web.id/teknis/${entry.id}/`
+  }
+};
+---
+
+<Layout
+  title={`${entry.data.title} | Teknis Pireki`}
+  description={entry.data.description}
+  ogImage={entry.data.image}
+  schemaExtra={[schemaBreadcrumb, schemaArticle]}
+>
+  <div class="py-6 bg-[#0a1428] border-b border-white/10 text-xs font-mono">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 text-slate-400">
+      <a href="/teknis/" class="hover:text-white flex items-center gap-1">
+        <ArrowLeft class="w-3.5 h-3.5" />
+        <span>Dokumentasi Teknis</span>
+      </a>
+      <span>/</span>
+      <span class="text-[#00e5ff] truncate max-w-xs">{entry.data.title}</span>
+    </div>
+  </div>
+
+  <article class="py-12 lg:py-20 relative bg-blueprint">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        
+        <!-- Main Content Area (8 Cols) -->
+        <div class="lg:col-span-8 space-y-8">
+          
+          <!-- Metadata Header -->
+          <div class="space-y-4 pb-6 border-b border-white/10">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-xs font-mono uppercase tracking-wider text-[#00e5ff] bg-[#00e5ff]/10 px-2.5 py-1 rounded">
+                Kategori: Teknis
+              </span>
+              <span class="text-xs font-mono uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded">
+                Sektor: {entry.data.aplikasi}
+              </span>
+              {entry.data.tipe && (
+                <span class="text-xs font-mono text-cyan-300 bg-white/5 px-2.5 py-1 rounded border border-white/10">
+                  Tipe: {entry.data.tipe}
+                </span>
+              )}
+            </div>
+
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              {entry.data.title}
+            </h1>
+
+            <div class="flex flex-wrap items-center gap-6 text-xs font-mono text-slate-400">
+              <div class="flex items-center gap-1.5">
+                <Calendar class="w-3.5 h-3.5 text-[#00e5ff]" />
+                <time datetime={entry.data.date.toISOString()}>{formattedDate}</time>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <User class="w-3.5 h-3.5 text-[#00e5ff]" />
+                <span>{entry.data.author}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Image (Standard 4:3 Ratio) -->
+          {entry.data.image && (
+            <div class="rounded-2xl overflow-hidden border border-white/10 glass-panel shadow-2xl relative group">
+              <div class="aspect-[4/3] w-full overflow-hidden bg-black/40">
+                <img
+                  src={entry.data.image}
+                  alt={entry.data.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="eager"
+                />
+              </div>
+            </div>
+          )}
+
+          <!-- Article Body Container -->
+          <div class="article-content glass-panel p-6 sm:p-10 rounded-2xl border border-white/10 shadow-2xl">
+            <Content />
+          </div>
+
+          <!-- Google Source Preferences Widget -->
+          <GoogleSourcePreferences variant="article" />
+
+          <!-- Bottom Navigation Link -->
+          <div class="pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+            <a
+              href="/teknis/"
+              class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-400 hover:text-white"
+            >
+              <ArrowLeft class="w-4 h-4" />
+              <span>Kembali ke Dokumentasi Teknis</span>
+            </a>
+            <a
+              href="/harga/"
+              class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[#00e5ff] hover:underline"
+            >
+              <span>Simulasi Hitung Biaya Ruang Rapat</span>
+              <ArrowRight class="w-4 h-4" />
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Sticky Sidebar CTA (4 Cols) -->
+        <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
+          <div class="glass-panel rounded-2xl p-6 sm:p-7 border border-[#00e5ff]/30 shadow-2xl relative overflow-hidden">
+            <div class="absolute -top-12 -right-12 w-32 h-32 bg-[#00e5ff]/10 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="text-[11px] font-mono text-[#00e5ff] uppercase tracking-wider font-semibold mb-2">
+              Konsultasi Akustik & Engineering
+            </div>
+            
+            <h2 class="text-xl font-bold text-white mb-3">
+              Perlu Asistensi Spesifikasi RKS?
+            </h2>
+            
+            <p class="text-xs text-slate-300 leading-relaxed mb-6">
+              Diskusikan kebutuhan teknis ruangan Anda langsung dengan insinyur CV Pireki Asia. Kami melayani perhitungan beban balok WF, uji desibel, dan survei lapangan.
+            </p>
+
+            <!-- Ringkasan Info Teknis -->
+            <div class="space-y-2.5 p-4 rounded-xl bg-black/40 border border-white/5 text-xs mb-6">
+              {entry.data.tipe && (
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-400">Tipe Terkait:</span>
+                  <strong class="text-[#00e5ff] font-mono">{entry.data.tipe}</strong>
+                </div>
+              )}
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400">Sektor:</span>
+                <span class="text-white capitalize">{entry.data.aplikasi}</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400">Legalitas:</span>
+                <span class="text-emerald-400 font-medium">Tersertifikasi TKDN</span>
+              </div>
+              <div class="flex items-center justify-between pt-2 border-t border-white/10">
+                <span class="text-slate-400">Jaminan Mutu:</span>
+                <span class="text-emerald-400 font-medium">Garansi 2 Tahun</span>
+              </div>
+            </div>
+
+            <!-- Value Highlights -->
+            <div class="space-y-2.5 mb-6 text-xs text-slate-300">
+              <div class="flex items-start gap-2">
+                <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span>Asistensi beban struktur balok gantung WF</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span>Gambar kerja format CAD / PDF untuk konsultan</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span>Pabrikasi mandiri langsung dari workshop produsen</span>
+              </div>
+            </div>
+
+            <!-- Tombol WhatsApp CTA -->
+            <a
+              href={`https://wa.me/6282376737701?text=${encodeURIComponent(`Halo CV Pireki Asia, saya membaca panduan teknis "${entry.data.title}" dan ingin konsultasi spesifikasi ruangan saya.`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-lg bg-[#00e5ff] hover:bg-white text-[#070e1e] font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-[#00e5ff]/20"
+            >
+              <Phone class="w-4 h-4" />
+              <span>Konsultasi Teknis (WA)</span>
+            </a>
+
+            <!-- Link Bantuan -->
+            <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono">
+              <a href="/harga/" class="text-[#00e5ff] hover:underline flex items-center gap-1.5">
+                <Calculator class="w-3.5 h-3.5" />
+                <span>Simulasi RAB</span>
+              </a>
+              <a href="/tipe/" class="text-slate-400 hover:text-white">
+                Katalog Produk →
+              </a>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+
+    </div>
+  </article>
+
+  <!-- Section Dokumentasi Teknis Terkait -->
+  <TeknisTerkait
+    currentSlug={entry.id}
+    aplikasi={entry.data.aplikasi}
+    tipe={entry.data.tipe}
+  />
+
+  <CtaSection />
+</Layout>

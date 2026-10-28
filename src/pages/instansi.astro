@@ -1,0 +1,264 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CtaSection from '../components/CtaSection.astro';
+import ProyekTerkait from '../components/ProyekTerkait.astro';
+import { Landmark, ShieldCheck, CheckCircle2, ArrowLeft, Phone, Award } from '@lucide/astro';
+
+const schemaService = {
+  "@type": "Service",
+  "@id": "https://partisiruangrapat.web.id/instansi/#service",
+  "name": "Pemasangan Partisi Ruang Sidang & Rapat Instansi Pemerintah, BUMN",
+  "serviceType": "Instalasi Partisi Akustik Ruang Sidang Pemerintah & BUMN Berdokumen TKDN",
+  "description": "Layanan partisi ruang sidang dan ruang rapat koordinasi instansi pemerintah & BUMN. Bersertifikat TKDN resmi CV Pireki Asia, kedap suara 60 dB untuk menjaga kerahasiaan rapat negara.",
+  "provider": {
+    "@id": "https://partisiruangrapat.web.id/#organization"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Indonesia"
+  },
+  "image": "https://partisiruangrapat.web.id/img/partisi-ruang-rapat-instansi_poco.webp"
+};
+
+const schemaBreadcrumb = {
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": "https://partisiruangrapat.web.id/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Penerapan Partisi",
+      "item": "https://partisiruangrapat.web.id/#sektor"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Instansi Pemerintah & BUMN",
+      "item": "https://partisiruangrapat.web.id/instansi/"
+    }
+  ]
+};
+---
+
+<Layout
+  title="Partisi Ruang Sidang & Rapat Instansi Pemerintah, BUMN | Pireki"
+  description="Partisi ruang sidang dan ruang rapat koordinasi instansi pemerintah & BUMN. Bersertifikat TKDN resmi CV Pireki Asia, kedap suara 60 dB untuk rapat tertutup."
+  ogImage="/img/partisi-ruang-rapat-instansi_poco.webp"
+  schemaExtra={[schemaService, schemaBreadcrumb]}
+>
+  <div class="py-6 bg-[#0a1428] border-b border-white/10 text-xs font-mono">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 text-slate-400">
+      <a href="/" class="hover:text-white flex items-center gap-1">
+        <ArrowLeft class="w-3.5 h-3.5" />
+        <span>Beranda</span>
+      </a>
+      <span>/</span>
+      <span class="text-[#00e5ff]">Instansi & BUMN</span>
+    </div>
+  </div>
+
+  <section class="py-12 lg:py-20 bg-blueprint">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <div class="lg:col-span-8 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-400/10 text-emerald-300 text-xs font-mono">
+            <Landmark class="w-3.5 h-3.5" />
+            <span>KEMENTERIAN, LEMBAGA NEGARA & BUMN</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Partisi Ruang Sidang & Rapat Koordinasi Instansi Pemerintah
+          </h1>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Pengadaan fasilitas di lingkungan pemerintahan dan Badan Usaha Milik Negara (BUMN) menuntut dua faktor krusial: <strong class="text-white">kepatuhan legalitas/TKDN</strong> dan <strong class="text-white">standar isolasi suara tinggi</strong> untuk melindungi kerahasiaan sidang kebijakan publik, evaluasi anggaran, maupun rapat strategis pertahanan dan keamanan.
+          </p>
+
+          <div class="glass-panel rounded-2xl p-6 border border-white/10 space-y-4">
+            <div class="flex items-center gap-2 text-[#00e5ff] font-mono text-xs uppercase tracking-wider">
+              <Award class="w-4 h-4" />
+              <span>Kualifikasi Pengadaan Resmi & Terverifikasi</span>
+            </div>
+            <h2 class="text-lg font-bold text-white">
+              Mengapa CV Pireki Asia Menjadi Mitra Tepercaya Pengadaan Gedung Negara?
+            </h2>
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+              <li class="flex items-start gap-2.5">
+                <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span><strong>Sertifikasi TKDN In-House:</strong> Komponen rangka, profil aluminium, dan panel diproduksi langsung di pabrik dalam negeri (Surabaya & Gresik) memenuhi ketentuan Tingkat Komponen Dalam Negeri.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span><strong>Legalitas Usaha Lengkap:</strong> NIB 0220009462709 (KBLI 16621), NPWP Perusahaan 71.293.989.1-604.000, serta Sertifikat Merek Resmi No. IDM000746833.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span><strong>Jaminan Privasi Akustik 60 dB:</strong> Mencegah kebocoran pembicaraan rapat rahasia ke area lobi atau ruang tunggu publik melalui insulasi Rockwool 80 kg/m³ dan jack mekanik ganda.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="space-y-4">
+            <h2 class="text-xl font-bold text-white">
+              Portofolio Proyek Nyata di Instansi Pemerintah & BUMN
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="p-4 rounded-xl bg-black/20 border border-white/5 space-y-1">
+                <strong class="text-[#00e5ff] block text-sm">Rusun POLRI & BIN IKN</strong>
+                <p class="text-xs text-slate-300">
+                  Instalasi penyekat ruang di 7 tower hunian (4 tower POLRI + 3 tower BIN) Ibu Kota Nusantara untuk ruang rapat koordinasi kawasan inti.
+                </p>
+              </div>
+              <div class="p-4 rounded-xl bg-black/20 border border-white/5 space-y-1">
+                <strong class="text-[#00e5ff] block text-sm">PT Petrokimia Gresik</strong>
+                <p class="text-xs text-slate-300">
+                  Pemasangan partisi geser Sorepa untuk ruang pertemuan korporasi BUMN industri pupuk dan bahan kimia nasional.
+                </p>
+              </div>
+              <div class="p-4 rounded-xl bg-black/20 border border-white/5 space-y-1">
+                <strong class="text-[#00e5ff] block text-sm">Puslatbang KDOD LAN Samarinda</strong>
+                <p class="text-xs text-slate-300">
+                  Aula Lembaga Administrasi Negara ditransformasi menjadi beberapa ruang diskusi privat untuk pelatihan aparatur sipil negara.
+                </p>
+              </div>
+              <div class="p-4 rounded-xl bg-black/20 border border-white/5 space-y-1">
+                <strong class="text-[#00e5ff] block text-sm">Dinas Perumahan Surabaya</strong>
+                <p class="text-xs text-slate-300">
+                  Ruang serbaguna dinas cipta karya yang dapat diubah menjadi ruang sidang teknis dan rapat koordinasi perizinan.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="lg:col-span-4 space-y-6">
+          <!-- Foto Visual Fasilitas Instansi 4:3 -->
+          <div class="glass-panel rounded-2xl overflow-hidden border border-white/15 shadow-2xl group">
+            <div class="aspect-[4/3] w-full overflow-hidden bg-black/40 relative">
+              <img
+                src="/img/partisi-ruang-rapat-instansi_poco.webp"
+                alt="Penerapan Partisi Ruang Sidang Instansi Pemerintah dan BUMN Pireki"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                width="800"
+                height="600"
+                loading="eager"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#070e1e]/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs">
+                <span class="font-mono text-cyan-300 font-semibold bg-[#070e1e]/90 px-2.5 py-1 rounded border border-cyan-500/30">
+                  Ruang Sidang & Aula Instansi
+                </span>
+                <span class="font-mono text-slate-300 text-[11px] bg-black/60 px-2 py-1 rounded">
+                  Pireki
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel rounded-2xl p-6 border border-[#00e5ff]/30 shadow-xl">
+            <h3 class="text-lg font-bold text-white mb-2">
+              Layanan Khusus Pengadaan
+            </h3>
+            <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+              Tim CV Pireki Asia siap membantu Pejabat Pembuat Komitmen (PPK), konsultan perencana, dan kontraktor dalam penyusunan Rencana Kerja dan Syarat (RKS), spesifikasi teknis, serta estimasi HPS/RAB resmi.
+            </p>
+            <div class="p-3 rounded-lg bg-black/30 border border-white/5 mb-6 text-xs text-emerald-400 font-mono">
+              ✓ Faktur Pajak Resmi & Dokumen TKDN Siap
+            </div>
+            <a
+              href="https://wa.me/6282376737701?text=Halo%20Pireki%2C%20kami%20dari%20instansi%20pemerintah%2FBUMN%20ingin%20konsultasi%20pengadaan%20partisi%20ruang%20rapat"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-[#00e5ff] hover:bg-white text-[#070e1e] font-bold text-xs uppercase tracking-wider transition-all"
+            >
+              <Phone class="w-4 h-4" />
+              <span>Konsultasi Teknis & Penawaran (WA)</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- KONTEN MENDALAM E-E-A-T PENERAPAN INSTANSI -->
+      <div class="mt-16 pt-12 border-t border-white/10 space-y-12">
+
+        <!-- Kepatuhan Regulasi dan TKDN -->
+        <div class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Kepatuhan Regulasi Pengadaan Barang dan Jasa Pemerintah Berdokumen TKDN
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Pengadaan interior dan partisi penyekat di instansi pemerintah, kementerian, lembaga negara, serta BUMN wajib mematuhi ketentuan perundang-undangan penggunaan produk dalam negeri. CV Pireki Asia merupakan produsen mandiri yang memiliki sertifikasi TKDN resmi, legalitas Nomor Induk Berusaha (NIB) berbasis risiko KBLI 16621, serta sertifikat merek terdaftar di Kementerian Hukum dan HAM.
+          </p>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Legalitas yang lengkap mempermudah Pejabat Pembuat Komitmen (PPK), Pejabat Pengadaan (PP), dan konsultan perencana dalam menyusun Harga Perkiraan Sendiri (HPS) serta dokumen Rencana Kerja dan Syarat (RKS) lelang resmi LPSE maupun e-Katalog LKPP tanpa risiko sanggahan regulasi.
+          </p>
+        </div>
+
+        <!-- Isolasi Akustik Sidang Tertutup -->
+        <div class="space-y-6">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Standar Kekedapan Suara 60 dB untuk Sidang Pleno dan Rapat Tertutup
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Ruang sidang komisi kedinasan dan aula rapat koordinasi pimpinan sering membahas materi strategis yang belum dirilis ke publik. Kebocoran audio ke area tunggu masyarakat atau lobi gedung merupakan risiko integritas institusi yang harus dicegah secara teknis:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-panel p-5 rounded-xl border border-white/10 space-y-2">
+              <span class="text-[#00e5ff] font-mono text-xs uppercase tracking-wider block">Kerahasiaan Negara</span>
+              <h3 class="text-lg font-bold text-white">Bebas Penyadapan Pasif</h3>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Kombinasi Rockwool 80 kg/m³ dan rubber seal mekanik meniadakan celah rambatan suara ke ruang koridor umum gedung pelayanan publik.
+              </p>
+            </div>
+
+            <div class="glass-panel p-5 rounded-xl border border-white/10 space-y-2">
+              <span class="text-[#00e5ff] font-mono text-xs uppercase tracking-wider block">Fleksibilitas Aula</span>
+              <h3 class="text-lg font-bold text-white">Aula Serbaguna Dinas</h3>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Satu aula dinas besar dapat diubah menjadi ruang sidang teknis terpisah pada pagi hari, lalu dibuka penuh saat pelantikan pejabat atau upacara internal.
+              </p>
+            </div>
+
+            <div class="glass-panel p-5 rounded-xl border border-white/10 space-y-2">
+              <span class="text-[#00e5ff] font-mono text-xs uppercase tracking-wider block">Ketahanan Fisik</span>
+              <h3 class="text-lg font-bold text-white">Struktur Tahan Benturan</h3>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Rangka besi galvanis dengan profil aluminium ekstrusi kokoh menjamin keawetan investasi aset gedung negara hingga lebih dari satu dekade.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Studi Kasus Proyek Strategis Nasional IKN -->
+        <div class="p-6 rounded-2xl bg-gradient-to-r from-emerald-950/40 via-[#070e1e] to-black border border-emerald-500/20 space-y-3">
+          <div class="text-emerald-400 font-mono text-xs uppercase tracking-wider">Rekam Jejak Proyek Strategis Nasional</div>
+          <h3 class="text-xl font-bold text-white">
+            Penyekat Ruang Rapat di 7 Tower Rusun POLRI dan BIN Kawasan Inti IKN
+          </h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            CV Pireki Asia dipercaya mengerjakan instalasi penyekat ruang pada 7 tower hunian dinas (4 tower POLRI dan 3 tower BIN) di Ibu Kota Nusantara (IKN). Prestasi ini membuktikan standar kualitas produk, kapasitas pasokan fabrikasi, dan kepatuhan standar keselamatan kerja (K3) teknisi Pireki dalam proyek konstruksi nasional berskala prioritas tinggi.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <ProyekTerkait
+    aplikasi="instansi"
+    title="Dokumentasi Proyek Partisi Instansi & Lembaga Negara"
+    eyebrow="PORTOFOLIO PEMERINTAHAN & KEDINASAN"
+    description="Implementasi partisi geser kedap suara bersertifikasi TKDN resmi CV Pireki Asia di fasilitas kementerian, instansi kedinasan, dan fasilitas kesehatan pemerintah."
+  />
+
+  <CtaSection />
+</Layout>

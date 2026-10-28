@@ -1,0 +1,126 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import KalkulatorEstimasi from '../../components/KalkulatorEstimasi.astro';
+import CtaSection from '../../components/CtaSection.astro';
+import { DollarSign, CheckCircle2, AlertCircle } from '@lucide/astro';
+
+const estimasiTabel = [
+  {
+    tipe: 'Sorepa Pro (Flagship 60 dB)',
+    sistem: 'Geser Per Panel',
+    akustik: 'Kedap Maksimal (Rockwool 80 kg/m³)',
+    kisaran: 'Rp 2.200.000 - Rp 2.800.000 / m²',
+    garansi: '2 Tahun Resmi',
+  },
+  {
+    tipe: 'Sorepa Prima',
+    sistem: 'Geser Per Section',
+    akustik: 'Kedap Suara (Rockwool 60 kg/m³)',
+    kisaran: 'Rp 2.000.000 - Rp 2.500.000 / m²',
+    garansi: '2 Tahun Resmi',
+  },
+  {
+    tipe: 'Samowa Persection',
+    sistem: 'Geser Per Section Mandiri',
+    akustik: 'Semi-Redam (Rockwool 30 kg/m³)',
+    kisaran: 'Rp 1.850.000 - Rp 2.200.000 / m²',
+    garansi: '2 Tahun Resmi',
+  },
+  {
+    tipe: 'Samowa Lipat',
+    sistem: 'Lipat Berengsel',
+    akustik: 'Semi-Redam (Glasswool 30 kg/m³)',
+    kisaran: 'Mulai ± Rp 1.758.000 / m²',
+    garansi: '1 Tahun',
+  },
+  {
+    tipe: 'Nice Partition',
+    sistem: 'Lipat Rel Bawah',
+    akustik: 'Penyekat Visual / Non-Peredam',
+    kisaran: 'Mulai ± Rp 1.378.000 / m²',
+    garansi: '1 Tahun',
+  }
+];
+---
+
+<Layout
+  title="Daftar Harga Partisi Ruang Rapat Per Meter & Simulasi RAB | Pireki"
+  description="Estimasi biaya dan harga partisi ruang rapat per meter m2 CV Pireki Asia. Hitung kebutuhan bukaan opening dan dapatkan penawaran resmi langsung pabrik."
+>
+  <section class="py-12 lg:py-20 bg-[#0a1428] border-b border-white/10 bg-blueprint">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-400/10 text-emerald-300 text-xs font-mono mb-3">
+          <DollarSign class="w-3.5 h-3.5" />
+          <span>TRANSPARANSI ESTIMASI BIAYA PABRIK</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          Harga Partisi Ruang Rapat
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base mt-4 leading-relaxed">
+          Biaya pembuatan partisi ruang rapat dihitung berdasarkan satuan luas permukaan bukaan (Panjang opening x Tinggi opening dalam meter persegi / m²), dipengaruhi oleh tipe peredam dan pilihan finishing interior.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kalkulator Interaktif -->
+  <KalkulatorEstimasi />
+
+  <!-- Tabel Referensi Biaya -->
+  <section class="py-16 bg-[#070e1e]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-10 text-center max-w-2xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+          Daftar Kisaran Harga Partisi per m²
+        </h2>
+        <p class="text-slate-400 text-xs sm:text-sm mt-2">
+          Harga acuan pabrikasi in-house CV Pireki Asia sebelum diskon volume proyek.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto glass-panel rounded-2xl border border-white/10 p-2 sm:p-4 mb-8">
+        <table class="w-full text-left text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-white/10 text-slate-300 font-mono uppercase text-[11px]">
+              <th class="p-4 font-bold">Tipe Partisi</th>
+              <th class="p-4 font-bold">Sistem Gerak</th>
+              <th class="p-4 font-bold">Kualitas Akustik</th>
+              <th class="p-4 font-bold text-emerald-400">Kisaran Harga / m²</th>
+              <th class="p-4 font-bold">Garansi</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5 font-sans">
+            {estimasiTabel.map((item) => (
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-4 font-bold text-white">{item.tipe}</td>
+                <td class="p-4 text-slate-300">{item.sistem}</td>
+                <td class="p-4 text-slate-300">{item.akustik}</td>
+                <td class="p-4 font-mono font-bold text-emerald-400">{item.kisaran}</td>
+                <td class="p-4 font-mono text-[#00e5ff]">{item.garansi}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Catatan Komponen RAB -->
+      <div class="p-6 rounded-xl bg-white/5 border border-white/10 max-w-4xl mx-auto text-xs text-slate-300 space-y-3">
+        <div class="flex items-center gap-2 text-white font-bold text-sm">
+          <AlertCircle class="w-4 h-4 text-[#00e5ff]" />
+          <span>Faktor yang Mempengaruhi Total RAB Proyek:</span>
+        </div>
+        <ul class="list-disc list-inside space-y-1.5 text-slate-400">
+          <li><strong>Pilihan Finishing:</strong> Finishing HPL standar, HPL motif marmer/kayu premium, kain Ateja akustik, atau wallpaper kustom.</li>
+          <li><strong>Struktur Penggantung:</strong> Kebutuhan pengadaan balok WF atau UNP di atas plafon (jika belum tersedia oleh kontraktor gedung).</li>
+          <li><strong>Pintu Akses (Pass Door):</strong> Penambahan pintu swing terintegrasi pada salah satu modul panel partisi untuk akses orang tanpa membuka seluruh panel.</li>
+          <li><strong>Biaya Pengiriman & Akomodasi Teknisi:</strong> Disesuaikan dengan kota lokasi proyek (Surabaya, Jabodetabek, Sumatera, Kalimantan, Sulawesi, dll).</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <CtaSection />
+</Layout>

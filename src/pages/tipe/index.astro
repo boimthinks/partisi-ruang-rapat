@@ -1,0 +1,136 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProdukGrid from '../../components/ProdukGrid.astro';
+import CtaSection from '../../components/CtaSection.astro';
+import { Layers, CheckCircle2 } from '@lucide/astro';
+
+const perbandingan = [
+  {
+    fitur: 'Sistem Operasi',
+    sorepaPro: 'Geser Per Panel (Individual Sliding)',
+    sorepaPrima: 'Geser Per Section',
+    samowaPersection: 'Geser Per Section Mandiri',
+    samowaLipat: 'Lipat Berengsel (Folding)',
+    nice: 'Lipat Berengsel (Folding)',
+  },
+  {
+    fitur: 'Tingkat Peredaman',
+    sorepaPro: 'Hingga 60 dB (Sangat Kedap)',
+    sorepaPrima: 'Hingga 60 dB (Sangat Kedap)',
+    samowaPersection: 'Semi Redam',
+    samowaLipat: 'Semi Redam',
+    nice: 'Non-Peredam (Visual)',
+  },
+  {
+    fitur: 'Material Insulasi',
+    sorepaPro: 'Rockwool 80 kg/m³',
+    sorepaPrima: 'Rockwool 60 kg/m³',
+    samowaPersection: 'Rockwool 30 kg/m³',
+    samowaLipat: 'Glasswool 30 kg/m³',
+    nice: 'Rongga Udara / Meranti',
+  },
+  {
+    fitur: 'Mekanisme Pengunci',
+    sorepaPro: 'Jack Mekanik Atas & Bawah Penuh',
+    sorepaPrima: 'Jack Mekanik',
+    samowaPersection: 'Jack Mekanik (Panel Terakhir) & Grendel',
+    samowaLipat: 'Grendel Tanam',
+    nice: 'Grendel Tanam',
+  },
+  {
+    fitur: 'Ketebalan Panel',
+    sorepaPro: '± 8 cm (Hollow 5x5)',
+    sorepaPrima: '± 8 cm (Hollow 5x5)',
+    samowaPersection: '± 8 cm (Hollow 5x5)',
+    samowaLipat: '± 6 cm (Hollow 4x4)',
+    nice: '± 6 cm (Hollow 4x4)',
+  },
+  {
+    fitur: 'Rel Bawah di Lantai',
+    sorepaPro: 'TIDAK ADA (Bebas Halangan)',
+    sorepaPrima: 'TIDAK ADA (Bebas Halangan)',
+    samowaPersection: 'TIDAK ADA (Bebas Halangan)',
+    samowaLipat: 'TIDAK ADA / Opsional Guide',
+    nice: 'Rel Aluminium Bawah',
+  },
+  {
+    fitur: 'Rekomendasi Ruang',
+    sorepaPro: 'Boardroom VIP, Ruang Sidang, Ballroom',
+    sorepaPrima: 'Ruang Rapat Modular, Kampus',
+    samowaPersection: 'Ruang Pertemuan Kantor, Kampus, Aula',
+    samowaLipat: 'Ruang Rapat Kantor Standar, Diklat',
+    nice: 'Penyekat Ruang Makan / Serbaguna',
+  }
+];
+---
+
+<Layout
+  title="Tipe Partisi Ruang Rapat | Katalog Sorepa & Samowa Pireki"
+  description="Katalog lengkap tipe partisi ruang rapat CV Pireki Asia: Sorepa Pro 60 dB kedap suara, Sorepa Prima sliding, dan Samowa lipat ekonomis."
+>
+  <!-- Header Page -->
+  <section class="py-12 lg:py-20 bg-[#0a1428] border-b border-white/10 bg-blueprint">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00e5ff]/10 text-[#00e5ff] text-xs font-mono mb-3">
+          <Layers class="w-3.5 h-3.5" />
+          <span>SISTEM & TIPE PARTISI</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          Pilihan Tipe Partisi Ruang Rapat
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base mt-4 leading-relaxed">
+          Temukan tipe partisi yang paling tepat untuk kebutuhan privasi dan mobilitas ruang rapat Anda, mulai dari sistem geser berdensitas tinggi hingga pintu lipat serbaguna.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Katalog Grid -->
+  <ProdukGrid columns={2} />
+
+  <!-- Tabel Perbandingan Komprehensif -->
+  <section class="py-16 bg-[#070e1e] border-t border-white/10 reveal-on-scroll">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-10 text-center max-w-2xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+          Tabel Komparasi Spesifikasi Teknis
+        </h2>
+        <p class="text-slate-400 text-xs sm:text-sm mt-2">
+          Bandingkan perbedaan material akustik, ketebalan profil, dan sistem suspensi antar varian Pireki.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto glass-panel rounded-2xl border border-white/10 p-2 sm:p-4">
+        <table class="w-full text-left text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-white/10 text-slate-300 font-mono uppercase text-[11px]">
+              <th class="p-4 font-bold">Fitur & Parameter</th>
+              <th class="p-4 font-bold text-[#00e5ff]">Sorepa Pro</th>
+              <th class="p-4 font-bold text-white">Sorepa Prima</th>
+              <th class="p-4 font-bold text-teal-300">Samowa Persection</th>
+              <th class="p-4 font-bold text-cyan-300">Samowa Lipat</th>
+              <th class="p-4 font-bold text-slate-400">Nice Partition</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5 font-sans">
+            {perbandingan.map((row) => (
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-4 font-semibold text-slate-200">{row.fitur}</td>
+                <td class="p-4 font-mono font-medium text-[#00e5ff]">{row.sorepaPro}</td>
+                <td class="p-4 text-slate-300">{row.sorepaPrima}</td>
+                <td class="p-4 text-slate-300">{row.samowaPersection}</td>
+                <td class="p-4 text-slate-300">{row.samowaLipat}</td>
+                <td class="p-4 text-slate-400">{row.nice}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <CtaSection />
+</Layout>

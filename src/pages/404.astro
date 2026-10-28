@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Home, ArrowLeft, Phone, Search } from '@lucide/astro';
+---
+
+<Layout
+  title="404 — Halaman Tidak Ditemukan | CV Pireki Asia"
+  description="Halaman yang Anda cari tidak ditemukan atau telah dipindahkan. Kembali ke beranda spesialis partisi ruang rapat CV Pireki Asia."
+>
+  <div class="min-h-[75vh] flex items-center justify-center py-20 bg-blueprint relative overflow-hidden">
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-[#00e5ff]/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-8">
+      
+      <!-- 404 Badge -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00e5ff]/10 border border-[#00e5ff]/30 text-[#00e5ff] text-xs font-mono uppercase tracking-wider">
+        <Search class="w-3.5 h-3.5" />
+        <span>Status 404 — Not Found</span>
+      </div>
+
+      <div class="space-y-3">
+        <h1 class="text-6xl sm:text-7xl font-extrabold text-white tracking-tight font-mono">
+          404
+        </h1>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          Halaman Tidak Ditemukan
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Tautan yang Anda tuju mungkin salah ketik, telah diperbarui, atau dipindahkan ke struktur kategori baru.
+        </p>
+      </div>
+
+      <!-- Quick Navigation Shortcuts -->
+      <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-4 text-left">
+        <span class="text-xs font-mono text-slate-400 block uppercase tracking-wider">
+          Rekomendasi Halaman Utama:
+        </span>
+        <div class="grid grid-cols-2 gap-3 text-xs font-mono">
+          <a
+            href="/tipe/"
+            class="p-3 rounded-lg bg-white/5 border border-white/10 text-slate-200 hover:text-[#00e5ff] hover:border-[#00e5ff]/40 transition-all flex items-center justify-between"
+          >
+            <span>Katalog Produk</span>
+            <span>→</span>
+          </a>
+          <a
+            href="/harga/"
+            class="p-3 rounded-lg bg-white/5 border border-white/10 text-slate-200 hover:text-[#00e5ff] hover:border-[#00e5ff]/40 transition-all flex items-center justify-between"
+          >
+            <span>Simulasi Biaya RAB</span>
+            <span>→</span>
+          </a>
+          <a
+            href="/teknis/"
+            class="p-3 rounded-lg bg-white/5 border border-white/10 text-slate-200 hover:text-[#00e5ff] hover:border-[#00e5ff]/40 transition-all flex items-center justify-between"
+          >
+            <span>Panduan Teknis</span>
+            <span>→</span>
+          </a>
+          <a
+            href="/lokasi/"
+            class="p-3 rounded-lg bg-white/5 border border-white/10 text-slate-200 hover:text-[#00e5ff] hover:border-[#00e5ff]/40 transition-all flex items-center justify-between"
+          >
+            <span>Direktori Wilayah</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 py-3 px-6 rounded-lg bg-[#00e5ff] hover:bg-white text-[#070e1e] font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-[#00e5ff]/20"
+        >
+          <Home class="w-4 h-4" />
+          <span>Kembali ke Beranda</span>
+        </a>
+        <a
+          href="https://wa.me/6282376737701?text=Halo%20Pireki,%20saya%20mengalami%20kendala%20saat%20membuka%20halaman%20website%20partisiruangrapat.web.id"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 py-3 px-6 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white font-mono text-xs uppercase tracking-wider transition-all"
+        >
+          <Phone class="w-4 h-4 text-[#00e5ff]" />
+          <span>Hubungi Bantuan CS</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,82 @@
+---
+import { getCollection } from 'astro:content';
+import { BookOpen, ArrowUpRight } from '@lucide/astro';
+import BlogCard from './BlogCard.astro';
+
+interface Props {
+  currentSlug: string;
+  aplikasi?: 'kantor' | 'hotel' | 'instansi' | 'kampus';
+  tipe?: string;
+  title?: string;
+  eyebrow?: string;
+  description?: string;
+  limit?: number;
+}
+
+const {
+  currentSlug,
+  aplikasi,
+  tipe,
+  title = 'Artikel & Wawasan Tata Ruang Terkait',
+  eyebrow = 'EDUKASI & PANDUAN RUANG RAPAT',
+  description = 'Pelajari strategi optimasi tata ruang, akustik, dan peredam suara lainnya untuk fasilitas gedung Anda.',
+  limit = 3,
+} = Astro.props;
+
+// Ambil semua artikel bertipe blog selain artikel yang sedang dibuka
+const allBlog = await getCollection('artikel', ({ data, id }) => data.label === 'blog' && id !== currentSlug);
+
+// Urutkan artikel terkait dengan prioritas kesesuaian sektor aplikasi
+const sortedBlog = allBlog.sort((a, b) => {
+  const matchA = aplikasi && a.data.aplikasi === aplikasi ? 1 : 0;
+  const matchB = aplikasi && b.data.aplikasi === aplikasi ? 1 : 0;
+
+  if (matchA !== matchB) {
+    return matchB - matchA;
+  }
+
+  // Jika bobot kategori sama, prioritaskan tanggal terbaru
+  return b.data.date.valueOf() - a.data.date.valueOf();
+});
+
+const displayBlog = sortedBlog.slice(0, limit);
+---
+
+{displayBlog.length > 0 && (
+  <section class="py-14 sm:py-20 bg-[#070e1e] border-t border-white/10 reveal-on-scroll">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+        <div class="max-w-2xl">
+          <div class="inline-flex items-center gap-2 text-xs font-mono text-[#00e5ff] uppercase tracking-wider mb-2">
+            <BookOpen class="w-3.5 h-3.5" />
+            <span>{eyebrow}</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            {title}
+          </h2>
+          <p class="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed">
+            {description}
+          </p>
+        </div>
+
+        <a
+          href="/blog/"
+          class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[#00e5ff] hover:text-white group shrink-0 transition-colors"
+        >
+          <span>Jelajahi Semua Artikel Blog</span>
+          <ArrowUpRight class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+        </a>
+      </div>
+
+      <!-- Grid Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {displayBlog.map((item) => (
+          <BlogCard artikel={item} />
+        ))}
+      </div>
+
+    </div>
+  </section>
+)}

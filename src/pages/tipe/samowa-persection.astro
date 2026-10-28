@@ -1,0 +1,344 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaSection from '../../components/CtaSection.astro';
+import ProyekTerkait from '../../components/ProyekTerkait.astro';
+import { Layers, CheckCircle2, Phone, ArrowLeft, Ruler } from '@lucide/astro';
+
+const schemaProduct = {
+  "@type": "Product",
+  "@id": "https://partisiruangrapat.web.id/tipe/samowa-persection/#product",
+  "name": "Partisi Ruang Rapat Samowa Persection Sliding",
+  "image": "https://partisiruangrapat.web.id/img/tipe-samowa-persection_poco.webp",
+  "description": "Partisi geser persection Samowa semi-redam suara yang fleksibel, kokoh, dan ekonomis untuk ruang pertemuan kantor, aula kampus, dan sekolah.",
+  "sku": "PIREKI-SAMOWA-PERSECTION",
+  "mpn": "SAMOWA-PERSECTION-SLIDING",
+  "brand": {
+    "@type": "Brand",
+    "name": "Pireki"
+  },
+  "manufacturer": {
+    "@id": "https://partisiruangrapat.web.id/#organization"
+  },
+  "category": "Building Materials > Doors > Folding Doors & Movable Walls",
+  "offers": {
+    "@type": "AggregateOffer",
+    "url": "https://partisiruangrapat.web.id/tipe/samowa-persection/",
+    "priceCurrency": "IDR",
+    "lowPrice": 1600000,
+    "highPrice": 1900000,
+    "offerCount": 4,
+    "priceValidUntil": "2026-12-31",
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
+    "seller": {
+      "@id": "https://partisiruangrapat.web.id/#organization"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 4.8,
+    "reviewCount": 115,
+    "ratingCount": 115,
+    "bestRating": 5,
+    "worstRating": 1
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 5,
+        "bestRating": 5,
+        "worstRating": 1
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Fajar Nugraha",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Gedung Perkantoran Metro Jakarta"
+        }
+      },
+      "datePublished": "2026-01-20",
+      "reviewBody": "Partisi Samowa Persection sangat fungsional membagi ruang rapat manajemen. Panel bergerak presisi dan harga sangat kompetitif."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 5,
+        "bestRating": 5,
+        "worstRating": 1
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Irwan Maulana",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Fakultas Kedokteran UMI Makassar"
+        }
+      },
+      "datePublished": "2026-02-18",
+      "reviewBody": "Sangat membantu operasional ruang ujian OSCE dan tutorial mahasiswa. Penyekatan cepat dan suara antar bilik tidak saling mengganggu."
+    }
+  ],
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Acoustic Rating",
+      "value": "Semi Kedap Suara"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Insulasi Inti",
+      "value": "Rockwool 30 kg/m³"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Mekanisme Pengunci",
+      "value": "Jack Mekanik (Panel Terakhir) & Grendel"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Ketebalan Daun",
+      "value": "Tebal 8 cm"
+    }
+  ]
+};
+
+const schemaBreadcrumb = {
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": "https://partisiruangrapat.web.id/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tipe Partisi",
+      "item": "https://partisiruangrapat.web.id/tipe/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Samowa Persection",
+      "item": "https://partisiruangrapat.web.id/tipe/samowa-persection/"
+    }
+  ]
+};
+---
+
+<Layout
+  title="Partisi Ruang Rapat Samowa Persection Sliding | Pireki"
+  description="Partisi geser persection Samowa Persection semi-redam suara. Fleksibel, presisi, dan hemat biaya untuk ruang pertemuan kantor, kampus, dan hotel."
+  ogImage="/img/tipe-samowa-persection_poco.webp"
+  ogType="product"
+  schemaExtra={[schemaProduct, schemaBreadcrumb]}
+>
+  <div class="py-6 bg-[#0a1428] border-b border-white/10 text-xs font-mono">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 text-slate-400">
+      <a href="/tipe/" class="hover:text-white flex items-center gap-1">
+        <ArrowLeft class="w-3.5 h-3.5" />
+        <span>Katalog Tipe Partisi</span>
+      </a>
+      <span>/</span>
+      <span class="text-[#00e5ff]">Samowa Persection</span>
+    </div>
+  </div>
+
+  <section class="py-12 lg:py-20 relative bg-blueprint">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-400/10 text-cyan-300 text-xs font-mono">
+            <Layers class="w-3.5 h-3.5" />
+            <span>SLIDING PERSECTION MID-RANGE</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Partisi Ruang Rapat <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-[#00e5ff]">
+              Samowa Persection
+            </span>
+          </h1>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Samowa Persection (Standard Movable Wall Persection) menggabungkan mobilitas geser per-panel mandiri dengan nilai ekonomis yang sangat bersahabat. Cocok untuk ruang pertemuan kantor, ruang kuliah, dan aula serbaguna.
+          </p>
+
+          <div class="glass-panel rounded-2xl p-6 border border-white/10 space-y-4">
+            <h2 class="text-base font-bold text-white uppercase tracking-wider font-mono border-b border-white/10 pb-3">
+              Spesifikasi Samowa Persection
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+              <div class="p-3 rounded-lg bg-black/20 border border-white/5">
+                <span class="text-slate-400 block mb-1">Karakter Akustik:</span>
+                <strong class="text-[#00e5ff] font-mono text-sm">Semi-Redam (Rockwool 30 kg/m³)</strong>
+              </div>
+              <div class="p-3 rounded-lg bg-black/20 border border-white/5">
+                <span class="text-slate-400 block mb-1">Sistem Operasi:</span>
+                <strong class="text-white font-mono text-sm">Sliding Per-Section Mandiri</strong>
+              </div>
+              <div class="p-3 rounded-lg bg-black/20 border border-white/5">
+                <span class="text-slate-400 block mb-1">Mekanisme Pengunci:</span>
+                <strong class="text-white font-mono text-sm">Jack Mekanik (Panel Terakhir) & Grendel</strong>
+              </div>
+              <div class="p-3 rounded-lg bg-black/20 border border-white/5">
+                <span class="text-slate-400 block mb-1">Rangka:</span>
+                <strong class="text-white font-mono text-sm">Hollow Besi 5x5 cm Tebal</strong>
+              </div>
+              <div class="p-3 rounded-lg bg-black/20 border border-white/5">
+                <span class="text-slate-400 block mb-1">Panel:</span>
+                <strong class="text-white font-mono text-sm">Multiplek / MDF 9 mm + Lis Aluminium</strong>
+              </div>
+              <div class="p-3 rounded-lg bg-black/20 border border-white/5">
+                <span class="text-slate-400 block mb-1">Ketebalan Daun:</span>
+                <strong class="text-emerald-400 font-mono text-sm">Heavy 8 cm</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-6">
+          <!-- Foto Visual Produk Samowa Persection -->
+          <div class="glass-panel rounded-2xl overflow-hidden border border-white/15 shadow-2xl group">
+            <div class="aspect-[4/3] w-full overflow-hidden bg-black/40 relative">
+              <img
+                src="/img/tipe-samowa-persection_poco.webp"
+                alt="Partisi Ruang Rapat Samowa Persection Sliding CV Pireki Asia"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                width="800"
+                height="600"
+                loading="eager"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#070e1e]/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs">
+                <span class="font-mono text-teal-300 font-semibold bg-[#070e1e]/90 px-2.5 py-1 rounded border border-teal-500/30">
+                  Samowa Persection
+                </span>
+                <span class="font-mono text-slate-300 text-[11px] bg-black/60 px-2 py-1 rounded">
+                  CV Pireki Asia
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel rounded-2xl p-6 sm:p-8 border border-white/15 shadow-2xl">
+            <h3 class="text-xl font-bold text-white mb-4">
+              Pemesanan Samowa Persection
+            </h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-6">
+              Pilihan ideal bagi Anda yang menginginkan fleksibilitas geser per-panel seperti tipe Sorepa namun dengan alokasi anggaran yang lebih efisien.
+            </p>
+
+            <a
+              href="https://wa.me/6282376737701?text=Halo%20Pireki%2C%20saya%20tertarik%20dengan%20tipe%20Samowa%20Persection%20untuk%20ruang%20rapat"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-lg bg-[#00e5ff] hover:bg-white text-[#070e1e] font-bold text-xs uppercase tracking-wider transition-all"
+            >
+              <Phone class="w-4 h-4" />
+              <span>Konsultasi Samowa Persection (WA)</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- KONTEN MENDALAM E-E-A-T SAMOWA PERSECTION -->
+      <div class="mt-16 pt-12 border-t border-white/10 space-y-12">
+
+        <!-- Konsep Nilai Ekonomis dan Mobilitas -->
+        <div class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Solusi Partisi Geser Mandiri dengan Nilai Investasi Rasional
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Banyak pengelola ruang rapat membutuhkan fleksibilitas buka-tutup per lembar daun (per section), namun tidak memiliki anggaran sebesar tipe flagship Sorepa Pro. Samowa Persection lahir sebagai solusi cerdas yang mengisi kebutuhan tersebut. Produk ini mempertahankan kenyamanan gerak geser individual tanpa mengorbankan kekuatan struktur mekanik.
+          </p>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Dengan ketebalan daun pintu mencapai 8 cm dan rangka hollow besi 5x5 cm, Samowa Persection memberikan kesan kokoh saat berdiri menutup ruangan. Partisi ini sangat andal untuk menyekat ruang rapat departemen, aula sekolah, ruang seminar, hingga balai pelatihan kerja.
+          </p>
+        </div>
+
+        <!-- Spesifikasi Rangka dan Karakter Akustik -->
+        <div class="space-y-6">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Karakter Insulasi Akustik Semi Redam yang Pas untuk Aktivitas Edukasi
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Samowa Persection menggunakan peredam Rockwool densitas 30 kg/m³ yang dilapisi multiplek atau MDF tebal 9 mm. Tingkat peredaman akustik semi-redam ini sangat efektif meredam kebisingan lalu lintas orang di koridor dan membatasi gaung percakapan antar kelas paralel.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-panel p-5 rounded-xl border border-white/10 space-y-2">
+              <span class="text-[#00e5ff] font-mono text-xs uppercase tracking-wider block">Kekuatan Fisik</span>
+              <h3 class="text-lg font-bold text-white">Rangka Hollow 5x5 cm</h3>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Struktur rangka besi berukuran 5x5 cm dirancang menahan benturan dan perlakuan buka-tutup berulang kali oleh staf umum maupun peserta pelatihan.
+              </p>
+            </div>
+
+            <div class="glass-panel p-5 rounded-xl border border-white/10 space-y-2">
+              <span class="text-[#00e5ff] font-mono text-xs uppercase tracking-wider block">Sistem Kunci</span>
+              <h3 class="text-lg font-bold text-white">Grendel Tanam dan Jack Akhir</h3>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Daun partisi dikunci satu per satu menggunakan grendel tanam presisi di bagian samping, ditutup oleh tuas mekanik jack pada modul panel penutup terakhir.
+              </p>
+            </div>
+
+            <div class="glass-panel p-5 rounded-xl border border-white/10 space-y-2">
+              <span class="text-[#00e5ff] font-mono text-xs uppercase tracking-wider block">Efisiensi Biaya</span>
+              <h3 class="text-lg font-bold text-white">Tarif Proyek Bersahabat</h3>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Menghadirkan tampilan mewah layaknya ballroom hotel bintang dengan anggaran pengadaan yang jauh lebih terjangkau untuk lembaga pendidikan dan instansi daerah.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rekomendasi Sektor Penggunaan -->
+        <div class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Fasilitas yang Paling Ideal Menggunakan Samowa Persection
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Berdasarkan pengalaman fabrikasi dan pemasangan teknisi CV Pireki Asia di ratusan proyek, tipe Samowa Persection memberikan kepuasan investasi tertinggi pada sektor-sektor berikut:
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+            <div class="p-4 rounded-xl bg-black/30 border border-white/10 space-y-2">
+              <strong class="text-[#00e5ff] block font-mono text-sm">Gedung Diklat dan Balai Latihan Kerja</strong>
+              <p class="text-slate-300 leading-relaxed">
+                Ruang kelas teori yang sering diubah menjadi ruang simulasi praktek kelompok besar. Sistem persection memudahkan penataan ruang tanpa membuat instruktur kelelahan menggeser panel.
+              </p>
+            </div>
+            <div class="p-4 rounded-xl bg-black/30 border border-white/10 space-y-2">
+              <strong class="text-[#00e5ff] block font-mono text-sm">Kantor Operasional dan Ruang Meeting Tim Internal</strong>
+              <p class="text-slate-300 leading-relaxed">
+                Sekat antara ruang rapat koordinasi divisi dengan ruang pantry atau area istirahat karyawan, menghadirkan privasi visual penuh dan kenyamanan audio yang memadai.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <ProyekTerkait
+    tipe="Samowa Persection"
+    title="Dokumentasi Proyek Terpasang Samowa Persection"
+    eyebrow="BUKTI INSTALASI MID-RANGE SLIDING"
+    description="Implementasi partisi geser persection tipe Samowa pada kampus perguruan tinggi dan gedung perkantoran tim dinamis."
+  />
+
+  <CtaSection />
+</Layout>

@@ -1,0 +1,155 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import CtaSection from '../../components/CtaSection.astro';
+import ProyekShowcase from '../../components/ProyekShowcase.astro';
+import { MapPin, Building, ArrowRight, ShieldCheck, Truck, Layers, Wrench } from '@lucide/astro';
+
+const lokasiList = await getCollection('lokasi');
+lokasiList.sort((a, b) => a.data.kota.localeCompare(b.data.kota));
+---
+
+<Layout
+  title="Jangkauan Wilayah Layanan Partisi Ruang Rapat Indonesia | CV Pireki Asia"
+  description="Pabrikasi dan pemasangan partisi ruang rapat kedap suara, pintu lipat, dan movable wall di kota-kota besar seluruh Indonesia. Didukung kantor perwakilan dan teknisi resmi."
+>
+  <!-- Hero Section -->
+  <section class="relative py-20 lg:py-28 bg-[#0a1428] border-b border-white/10 overflow-hidden bg-blueprint">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00e5ff]/10 border border-[#00e5ff]/20 text-[#00e5ff] text-xs font-mono uppercase tracking-wider mb-6">
+          <MapPin class="w-3.5 h-3.5" />
+          <span>Jangkauan Nasional CV Pireki Asia</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          Layanan Pemasangan Partisi Ruang Rapat di Kota-Kota Besar Indonesia
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base mt-4 leading-relaxed">
+          Sebagai produsen langsung spesialis partisi akustik gerak sejak 2008, CV Pireki Asia melayani survei teknis, asistensi balok struktur gantung, pengiriman aman, dan pemasangan in-house di berbagai provinsi.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- City Grid Section -->
+  <section class="py-16 sm:py-24 bg-[#070e1e]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-12">
+        <div class="text-[#00e5ff] font-mono text-xs uppercase tracking-widest mb-2 flex items-center gap-2">
+          <Building class="w-4 h-4 text-[#00e5ff]" />
+          <span>DIREKTORI WILAYAH &amp; KOTA UTAMA</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          Pilih Kota Gedung Anda untuk Informasi Layanan &amp; Portofolio
+        </h2>
+        <p class="text-slate-300 text-xs sm:text-sm mt-2">
+          Setiap kota memiliki rujukan kantor layanan, karakteristik akustik lokal, serta portofolio proyek riil terpasang.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {lokasiList.map((item) => (
+          <div class="glass-panel rounded-2xl overflow-hidden border border-white/10 hover:border-[#00e5ff]/40 transition-all flex flex-col justify-between group">
+            <div>
+              <!-- 4:3 Image Container with clickable link -->
+              <a href={`/lokasi/${item.id}/`} class="block aspect-[4/3] w-full overflow-hidden bg-slate-900 relative">
+                <img
+                  src={item.data.image}
+                  alt={`Partisi Ruang Rapat di ${item.data.kota}`}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+                <div class="absolute top-3 left-3 bg-[#0a1428]/90 backdrop-blur-md border border-white/10 px-2.5 py-1 rounded text-[11px] font-mono text-[#00e5ff] uppercase tracking-wider flex items-center gap-1.5 shadow-lg">
+                  <MapPin class="w-3 h-3" />
+                  <span>{item.data.kota}</span>
+                </div>
+                <div class="absolute top-3 right-3 bg-amber-500/20 backdrop-blur-md border border-amber-500/30 px-2.5 py-1 rounded text-[10px] font-mono text-amber-300 uppercase tracking-wider shadow-lg">
+                  {item.data.provinsi}
+                </div>
+              </a>
+
+              <!-- Card Content -->
+              <div class="p-6 space-y-3">
+                <a href={`/lokasi/${item.id}/`}>
+                  <h3 class="text-xl font-bold text-white group-hover:text-[#00e5ff] transition-colors leading-snug">
+                    Partisi Ruang Rapat {item.data.kota}
+                  </h3>
+                </a>
+
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed line-clamp-2">
+                  {item.data.description}
+                </p>
+
+                <div class="pt-2 text-xs font-mono text-slate-400">
+                  <span class="text-slate-500 block text-[10px] uppercase">Layanan Terdekat:</span>
+                  <span class="text-slate-300 truncate block">{item.data.kantorLayanan}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Nationwide Advantages -->
+  <section class="py-16 bg-[#0a1428] border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mx-auto text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          Mengapa Seluruh Indonesia Memilih Partisi Pireki?
+        </h2>
+        <p class="text-slate-300 text-xs sm:text-sm mt-3">
+          Standar integritas mutu dan keahlian rekayasa manufaktur yang teruji sejak 2008.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-[#00e5ff]/10 border border-[#00e5ff]/20 flex items-center justify-center text-[#00e5ff]">
+            <Building class="w-5 h-5" />
+          </div>
+          <h3 class="text-base font-bold text-white">Produsen Mandiri</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Pabrik dan workshop mandiri di Surabaya &amp; Gresik. Tanpa perantara, menjamin harga transparan dan mutu presisi.
+          </p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-[#00e5ff]/10 border border-[#00e5ff]/20 flex items-center justify-center text-[#00e5ff]">
+            <Wrench class="w-5 h-5" />
+          </div>
+          <h3 class="text-base font-bold text-white">Teknisi In-House</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Pemasangan ditangani langsung oleh teknisi resmi pabrik yang berpengalaman memasang ribuan meter partisi.
+          </p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-[#00e5ff]/10 border border-[#00e5ff]/20 flex items-center justify-center text-[#00e5ff]">
+            <Truck class="w-5 h-5" />
+          </div>
+          <h3 class="text-base font-bold text-white">Logistik Nasional</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Pengiriman aman menggunakan peti kayu dan ekspedisi kontainer khusus ke seluruh pulau di Indonesia.
+          </p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-[#00e5ff]/10 border border-[#00e5ff]/20 flex items-center justify-center text-[#00e5ff]">
+            <ShieldCheck class="w-5 h-5" />
+          </div>
+          <h3 class="text-base font-bold text-white">Garansi Mekanikal</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Jaminan garansi mekanikal roda, rel gantung, dan jack seal, didukung ketersediaan suku cadang resmi selamanya.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ProyekShowcase />
+  <CtaSection />
+</Layout>

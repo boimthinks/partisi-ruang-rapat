@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import { Building2, ArrowUpRight } from '@lucide/astro';
+import ProyekCard from './ProyekCard.astro';
+
+const projects = await getCollection('artikel', ({ data }) => data.label === 'proyek');
+projects.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<section id="proyek" class="py-16 lg:py-24 bg-[#0a1428] relative border-t border-white/10 reveal-on-scroll">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="max-w-3xl mb-12">
+      <div class="text-[#00e5ff] font-mono text-xs uppercase tracking-widest mb-2 flex items-center gap-2">
+        <Building2 class="w-4 h-4 text-[#00e5ff]" />
+        <span>PORTOFOLIO SOSIAL PROOF NYATA</span>
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-white">
+        Proyek Partisi Ruang Rapat di Seluruh Indonesia
+      </h2>
+      <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+        Dokumentasi instalasi nyata partisi geser dan lipat CV Pireki Asia di instansi pemerintah, BUMN, perhotelan, kampus, dan korporat nasional.
+      </p>
+    </div>
+
+    <!-- Grid Proyek -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projects.map((proyek) => (
+        <ProyekCard {proyek} />
+      ))}
+    </div>
+
+    <!-- Bottom link to full portfolio -->
+    <div class="mt-12 text-center">
+      <a
+        href="/proyek/"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/15 text-xs font-mono uppercase tracking-wider text-white transition-colors"
+      >
+        <span>Lihat Dokumentasi Lengkap Proyek & Galeri</span>
+        <ArrowUpRight class="w-4 h-4 text-[#00e5ff]" />
+      </a>
+    </div>
+
+  </div>
+</section>

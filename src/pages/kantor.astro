@@ -1,0 +1,262 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CtaSection from '../components/CtaSection.astro';
+import ProyekTerkait from '../components/ProyekTerkait.astro';
+import { Building, ShieldCheck, CheckCircle2, ArrowLeft, Phone } from '@lucide/astro';
+
+const schemaService = {
+  "@type": "Service",
+  "@id": "https://partisiruangrapat.web.id/kantor/#service",
+  "name": "Pemasangan Partisi Ruang Rapat Kantor & Boardroom Eksekutif",
+  "serviceType": "Instalasi Partisi Geser Ruang Rapat Kedap Suara Kantor",
+  "description": "Layanan fabrikasi dan instalasi partisi geser peredam suara hingga 60 dB untuk ruang rapat direksi, boardroom eksekutif, dan meeting room kantor komersial tanpa rel lantai.",
+  "provider": {
+    "@id": "https://partisiruangrapat.web.id/#organization"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Indonesia"
+  },
+  "image": "https://partisiruangrapat.web.id/img/partisi-ruang-rapat-kantor_poco.webp"
+};
+
+const schemaBreadcrumb = {
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": "https://partisiruangrapat.web.id/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Penerapan Partisi",
+      "item": "https://partisiruangrapat.web.id/#sektor"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Ruang Rapat Kantor & Boardroom",
+      "item": "https://partisiruangrapat.web.id/kantor/"
+    }
+  ]
+};
+---
+
+<Layout
+  title="Partisi Ruang Rapat Kantor & Boardroom Kedap Suara | Pireki"
+  description="Solusi partisi geser ruang rapat kantor kedap suara hingga 60 dB. Jaga kerahasiaan diskusi manajerial dengan rel gantung tanpa rel lantai."
+  ogImage="/img/partisi-ruang-rapat-kantor_poco.webp"
+  schemaExtra={[schemaService, schemaBreadcrumb]}
+>
+  <div class="py-6 bg-[#0a1428] border-b border-white/10 text-xs font-mono">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 text-slate-400">
+      <a href="/" class="hover:text-white flex items-center gap-1">
+        <ArrowLeft class="w-3.5 h-3.5" />
+        <span>Beranda</span>
+      </a>
+      <span>/</span>
+      <span class="text-[#00e5ff]">Ruang Rapat Kantor</span>
+    </div>
+  </div>
+
+  <section class="py-12 lg:py-20 bg-blueprint">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <div class="lg:col-span-8 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00e5ff]/10 text-[#00e5ff] text-xs font-mono">
+            <Building class="w-3.5 h-3.5" />
+            <span>KORPORAT & COMMERCIAL OFFICES</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Partisi Ruang Rapat Kantor & Boardroom Eksekutif
+          </h1>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Dalam konsep gedung perkantoran modern, ruang rapat sering kali menjadi benteng pertahanan terakhir untuk menjaga kerahasiaan diskusi manajerial, audit keuangan internal, presentasi klien penting, dan negosiasi kontrak strategis. Kebocoran suara ke koridor atau area kerja staf dapat berakibat fatal bagi keamanan strategi bisnis.
+          </p>
+
+          <div class="glass-panel rounded-2xl p-6 border border-white/10 space-y-4">
+            <h2 class="text-lg font-bold text-white">
+              Tantangan Akustik dan Tata Ruang di Gedung Perkantoran Modern
+            </h2>
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+              <li class="flex items-start gap-2.5">
+                <CheckCircle2 class="w-4 h-4 text-[#00e5ff] shrink-0 mt-0.5" />
+                <span><strong>Kebocoran Percakapan Melalui Dinding Tipis:</strong> Sekat gypsum standar umumnya hanya memiliki redam suara 30 sampai 35 dB, membuat suara diskusi internal masih terdengar samar di luar ruangan.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <CheckCircle2 class="w-4 h-4 text-[#00e5ff] shrink-0 mt-0.5" />
+                <span><strong>Bising Latar Mengganggu Telekonferensi:</strong> Suara percakapan staf di area open office dan deru pendingin udara HVAC plafon sering bocor masuk ke mikrofon rapat daring.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <CheckCircle2 class="w-4 h-4 text-[#00e5ff] shrink-0 mt-0.5" />
+                <span><strong>Pemborosan Biaya Sewa Gedung (Ruang Mati):</strong> Membiarkan ruang rapat besar menganggur saat tidak ada rapat akbar merupakan kerugian nyata atas tarif sewa ruang komersial per meter persegi.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="space-y-4">
+            <h2 class="text-xl font-bold text-white">
+              Solusi Pireki: Transformasi Ruang Modular Multifungsi
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Dengan memasang partisi geser kedap suara Sorepa Pro, satu aula pertemuan kantor berkapasitas 40 orang dapat secara instan disekat menjadi dua ruang rapat mandiri berkapasitas 15 hingga 20 orang. Kedua divisi dapat berdiskusi secara paralel tanpa saling mengganggu. Saat agenda evaluasi bulanan atau rapat gabungan seluruh staf berlangsung, partisi cukup digeser dan diparkir rapi ke ceruk samping dalam waktu kurang dari lima menit.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="lg:col-span-4 space-y-6">
+          <!-- Foto Visual Fasilitas Kantor 4:3 -->
+          <div class="glass-panel rounded-2xl overflow-hidden border border-white/15 shadow-2xl group">
+            <div class="aspect-[4/3] w-full overflow-hidden bg-black/40 relative">
+              <img
+                src="/img/partisi-ruang-rapat-kantor_poco.webp"
+                alt="Penerapan Partisi Ruang Rapat Kantor dan Boardroom Pireki"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                width="800"
+                height="600"
+                loading="eager"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#070e1e]/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs">
+                <span class="font-mono text-[#00e5ff] font-semibold bg-[#070e1e]/90 px-2.5 py-1 rounded border border-[#00e5ff]/30">
+                  Meeting Room & Boardroom
+                </span>
+                <span class="font-mono text-slate-300 text-[11px] bg-black/60 px-2 py-1 rounded">
+                  Pireki
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel rounded-2xl p-6 border border-[#00e5ff]/30 shadow-xl">
+            <h3 class="text-lg font-bold text-white mb-2">
+              Rekomendasi Kantor
+            </h3>
+            <div class="font-mono text-sm text-[#00e5ff] font-bold mb-4">
+              Sorepa Pro (60 dB Kedap Suara)
+            </div>
+            <p class="text-xs text-slate-300 mb-6">
+              Dilengkapi finishing HPL kayu elegan yang serasi dengan meja rapat eksekutif dan credenza kantor Anda.
+            </p>
+            <a
+              href="https://wa.me/6282376737701?text=Halo%20Pireki%2C%20saya%20butuh%20partisi%20untuk%20ruang%20rapat%20kantor"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-[#00e5ff] hover:bg-white text-[#070e1e] font-bold text-xs uppercase tracking-wider transition-all"
+            >
+              <Phone class="w-4 h-4" />
+              <span>Survei Ruang Kantor (WA)</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- KONTEN MENDALAM E-E-A-T PENERAPAN KANTOR -->
+      <div class="mt-16 pt-12 border-t border-white/10 space-y-12">
+
+        <!-- Standar Speech Privacy Ruang Rapat Direksi -->
+        <div class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Menjaga Standar Privasi Bicara dan Kerahasiaan Data Perusahaan
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Dalam dunia manajemen korporasi, kebocoran informasi internal sering kali bersumber dari rambatan suara yang lolos melalui celah pintu atau dinding partisi yang tidak kedap. Ketika jajaran komisaris atau direksi mendiskusikan strategi akuisisi, restrukturisasi organisasi, atau laporan kinerja laba rugi, mereka membutuhkan kepastian bahwa ruang rapat benar-benar kedap suara.
+          </p>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Partisi Sorepa Pro Pireki dilengkapi karet rubber seal ganda di bagian atas dan bawah yang digerakkan oleh tuas mekanik jack device. Tekanan karet seal yang rapat ke permukaan lantai dan profil rel plafon meniadakan celah kebocoran udara. Hal ini memberikan jaminan speech privacy penuh, membuat percakapan internal tidak dapat disadap maupun didengar secara tidak sengaja oleh siapa pun yang melintas di koridor.
+          </p>
+        </div>
+
+        <!-- Fleksibilitas Desain Interior dan Pilihan Finishing -->
+        <div class="space-y-6">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Pilihan Finishing Mewah yang Senada dengan Estetika Interior Kantor
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Partisi ruang rapat bukan sekadar dinding fungsional, melainkan bagian utama dari representasi visual citra profesional perusahaan saat menyambut tamu dan klien VIP. CV Pireki Asia menyediakan beragam varian finishing permukaan panel yang dapat disesuaikan dengan konsep desain interior arsitek Anda:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-panel p-5 rounded-xl border border-white/10 space-y-2">
+              <span class="text-[#00e5ff] font-mono text-xs uppercase tracking-wider block">Nuansa Mewah</span>
+              <h3 class="text-lg font-bold text-white">HPL Motif Kayu dan Tekstur Marmer</h3>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Menghadirkan kesan hangat, berwibawa, dan elegan yang serasi dengan meja rapat jati, dinding panel akustik kayu, serta lantai parket eksekutif.
+              </p>
+            </div>
+
+            <div class="glass-panel p-5 rounded-xl border border-white/10 space-y-2">
+              <span class="text-[#00e5ff] font-mono text-xs uppercase tracking-wider block">Akustik Maksimal</span>
+              <h3 class="text-lg font-bold text-white">Kain Ateja Fabric Berbusa</h3>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Lapisan kain berpori halus dengan busa peredam di balik panel membantu menyerap pantulan gema suara (echo reduction) di dalam ruangan rapat telekonferensi.
+              </p>
+            </div>
+
+            <div class="glass-panel p-5 rounded-xl border border-white/10 space-y-2">
+              <span class="text-[#00e5ff] font-mono text-xs uppercase tracking-wider block">Fungsional Modern</span>
+              <h3 class="text-lg font-bold text-white">Whiteboard Glass dan Wallpaper</h3>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Permukaan panel dapat dipadukan dengan kaca magnetik papan tulis untuk sesi brainstorming tim atau wallpaper motif modern sesuai pedoman identitas merek korporat.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Studi Kasus Nyata di Perkantoran BUMN dan Korporasi -->
+        <div class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Bukti Pengalaman Nyata di Gedung Perkantoran Nasional
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            CV Pireki Asia telah dipercaya memasang sistem partisi ruang rapat di berbagai fasilitas perkantoran bergengsi di Indonesia:
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+            <div class="p-4 rounded-xl bg-black/30 border border-white/10 space-y-2">
+              <strong class="text-[#00e5ff] block font-mono text-sm">PT Pertamina Hulu Rokan di Pekanbaru</strong>
+              <p class="text-slate-300 leading-relaxed">
+                Pemasangan partisi geser Sorepa kedap suara untuk membagi ruang rapat operasional dan ruang pelatihan teknis di komplek perkantoran hulu migas nasional.
+              </p>
+            </div>
+            <div class="p-4 rounded-xl bg-black/30 border border-white/10 space-y-2">
+              <strong class="text-[#00e5ff] block font-mono text-sm">Gedung BNI Kantor Wilayah Makassar</strong>
+              <p class="text-slate-300 leading-relaxed">
+                Transformasi ballroom lantai atas bank BNI menjadi ruang pertemuan modular dengan finishing HPL motif kayu jati yang elegan dan peredaman suara tinggi.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panduan Koordinasi Kontraktor Interior -->
+        <div class="p-6 rounded-2xl bg-gradient-to-r from-blue-900/30 via-[#070e1e] to-black border border-white/10 space-y-3">
+          <div class="text-[#00e5ff] font-mono text-xs uppercase tracking-wider">Dukungan Teknis Proyek</div>
+          <h3 class="text-xl font-bold text-white">
+            Koordinasi Terpadu Bersama Tim Arsitek dan Kontraktor Fit-Out
+          </h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Tim konsultan teknis CV Pireki Asia siap memberikan gambar kerja Auto-CAD, detail potongan balok gantung, perhitungan titik beban gantung di dak beton, dan asistensi survei langsung ke gedung kantor Anda di seluruh kota Indonesia tanpa biaya komitmen awal.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <ProyekTerkait
+    aplikasi="kantor"
+    title="Dokumentasi Proyek Partisi Ruang Rapat Kantor"
+    eyebrow="PORTOFOLIO KANTOR & BOARDROOM"
+    description="Implementasi nyata partisi geser dan lipat CV Pireki Asia pada ruang rapat kantor operasional BUMN dan gedung perkantoran swasta nasional."
+  />
+
+  <CtaSection />
+</Layout>

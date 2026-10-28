@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import CtaSection from '../../components/CtaSection.astro';
+import ProyekCard from '../../components/ProyekCard.astro';
+import { Building2 } from '@lucide/astro';
+
+const proyekArtikel = await getCollection('artikel', ({ data }) => data.label === 'proyek');
+proyekArtikel.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const schemaBreadcrumb = {
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": "https://partisiruangrapat.web.id/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Daftar Proyek Terpasang",
+      "item": "https://partisiruangrapat.web.id/proyek/"
+    }
+  ]
+};
+---
+
+<Layout
+  title="Portofolio Proyek Partisi Ruang Rapat di Indonesia | Pireki"
+  description="Daftar proyek pemasangan partisi ruang rapat kedap suara CV Pireki Asia di BUMN, Pertamina, IKN, Bank BNI, UNAIR, dan hotel bintang lima seluruh Indonesia."
+  schemaExtra={[schemaBreadcrumb]}
+>
+  <section class="py-12 lg:py-20 bg-[#0a1428] border-b border-white/10 bg-blueprint">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00e5ff]/10 text-[#00e5ff] text-xs font-mono mb-3">
+          <Building2 class="w-3.5 h-3.5" />
+          <span>REKAM JEJAK NYATA & TERPERCAYA</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          Portofolio Proyek Ruang Rapat
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base mt-4 leading-relaxed">
+          Lebih dari 1.000 proyek partisi geser dan lipat telah terpasang di seluruh penjuru Indonesia dari Sabang hingga Merauke. Berikut adalah dokumentasi instalasi pada klien strategis CV Pireki Asia.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic Project Cards Grid -->
+  <section class="py-16 bg-[#070e1e]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {proyekArtikel.map((proyek) => (
+          <ProyekCard {proyek} />
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <CtaSection />
+</Layout>

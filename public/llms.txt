@@ -1,0 +1,47 @@
+# partisiruangrapat.web.id
+
+> Produsen & aplikator spesialis partisi ruang rapat kedap suara, movable wall persection, dan pintu lipat akustik di Indonesia di bawah naungan CV Pireki Asia (PIREKI).
+
+Website ini menyediakan spesifikasi rekayasa teknik akustik bangunan, panduan perhitungan beban balok gantung WF, sertifikasi TKDN resmi Kemenperin, estimasi simulasi RAB, dokumentasi proyek nyata, serta layanan survei dan pemasangan nasional di 12 kota/wilayah utama.
+
+## Informasi Entitas & Kontak Resmi
+- Brand / Badan Usaha: CV Pireki Asia (PIREKI)
+- Berdiri Sejak: 2008 (Pabrikasi mandiri sejak 2011)
+- Legalitas & Sertifikasi: NIB 0220009462709, Merek Resmi IDM000746833, Sertifikasi TKDN Kementerian Perindustrian
+- Workshop & Pabrik: Lakarsantri, Surabaya & Driyorejo, Gresik, Jawa Timur
+- Hotline WhatsApp: 0823-7673-7701
+- Email: antoni.pireki@gmail.com / sales@pireki.id
+- Website Resmi: https://partisiruangrapat.web.id
+
+## Tipe Produk & Sistem Penyekat Ruangan
+- [Sorepa Pro](https://partisiruangrapat.web.id/tipe/sorepa-pro/): Partisi geser movable wall persection kedap suara superior hingga 60 dB dengan Rockwool 80 kg/m³ dan mechanical jack device atas-bawah.
+- [Sorepa Prima](https://partisiruangrapat.web.id/tipe/sorepa-prima/): Movable wall persection semi redam suara (45-50 dB) untuk ballroom hotel, convention center, dan ruang rapat medium.
+- [Samowa Persection](https://partisiruangrapat.web.id/tipe/samowa-persection/): Sistem penyekat geser modular per daun ekonomis untuk ruang kelas tutorial kampus, lab ujian OSCE, dan kantor.
+- [Samowa Lipat](https://partisiruangrapat.web.id/tipe/samowa-lipat/): Pintu lipat akustik (folding door) praktis berengsel kupu-kupu untuk ruang serbaguna, aula diklat, dan kantor cabang.
+
+## Penerapan Sektor Fasilitas Gedung
+- [Ruang Rapat Kantor](https://partisiruangrapat.web.id/kantor/): Penyekat ruangan kedap suara untuk boardroom eksekutif, meeting room hybrid, dan kantor modern.
+- [Ballroom Hotel & MICE](https://partisiruangrapat.web.id/hotel/): Partisi movable wall pembagi aula multi-event simultan tanpa merusak karpet mewah (tanpa rel lantai).
+- [Gedung Instansi Pemerintah](https://partisiruangrapat.web.id/instansi/): Penyekat aula dinas pemda dan ruang sidang kedinasan sesuai standar spesifikasi tender LPSE/RKS.
+- [Auditorium & Ruang Sidang Kampus](https://partisiruangrapat.web.id/kampus/): Partisi fleksibel aula universitas, ruang tutorial, dan laboratorium simulasi kedokteran.
+
+## Layanan Wilayah & Titik Distribusi (12 Kota Utama)
+- [Surabaya](https://partisiruangrapat.web.id/lokasi/surabaya/): Kantor Pusat & Workshop Manufaktur Lakarsantri & Driyorejo.
+- [Jakarta](https://partisiruangrapat.web.id/lokasi/jakarta/): Kantor Perwakilan Lenteng Agung, Jakarta Selatan.
+- [Bandung](https://partisiruangrapat.web.id/lokasi/bandung/): Kantor Perwakilan Pasteur, Jawa Barat.
+- [Semarang](https://partisiruangrapat.web.id/lokasi/semarang/): Kantor Perwakilan Tlogosari, Jawa Tengah.
+- [Yogyakarta](https://partisiruangrapat.web.id/lokasi/yogyakarta/): Kantor Perwakilan Maguwoharjo, Sleman, DIY & Solo Raya.
+- [Palembang](https://partisiruangrapat.web.id/lokasi/palembang/): Layanan distribusi & teknisi resmi Sumatera Selatan.
+- [Batam](https://partisiruangrapat.web.id/lokasi/batam/): Distribusi logistik kargo laut & teknisi Kepulauan Riau (Kawasan FTZ & Hotel).
+- [Makassar](https://partisiruangrapat.web.id/lokasi/makassar/): Hub distribusi logistik laut & teknisi Indonesia Timur & Sulawesi Selatan.
+- [Pekanbaru](https://partisiruangrapat.web.id/lokasi/pekanbaru/): Distribusi logistik darat/laut & teknisi area Riau & operasional migas.
+- [Medan](https://partisiruangrapat.web.id/lokasi/medan/): Distribusi kargo & teknisi pemasangan Sumatera Utara & perbankan.
+- [IKN Nusantara & Balikpapan](https://partisiruangrapat.web.id/lokasi/ikn-nusantara/): Layanan proyek gedung negara KIPP IKN & hunian vertikal ASN/TNI/POLRI (Standar TKDN).
+- [Bali](https://partisiruangrapat.web.id/lokasi/bali/): Layanan penyeberangan kargo & teknisi hotel resort MICE internasional Badung & Denpasar.
+
+## Dokumentasi Rekayasa Teknis & Wawasan
+- [Mengapa Rockwool Densitas 80 kg/m³ Redam Suara 60 dB](https://partisiruangrapat.web.id/teknis/material-akustik-60db/): Fisika disipasi gelombang suara pori terbuka dan peredam bising ruang pertemuan.
+- [Material Akustik 60 dB](https://partisiruangrapat.web.id/teknis/material-akustik-60db/): Analisis Sound Transmission Class (STC) dan formulasi sandwich panel.
+- [Sistem Rel Gantung](https://partisiruangrapat.web.id/teknis/sistem-rel-gantung/): Mekanisme suspensi atas tanpa parit rel bawah dan beban balok WF.
+- [Perbedaan Partisi Geser Movable Wall vs Pintu Lipat](https://partisiruangrapat.web.id/blog/perbedaan-partisi-geser-movable-wall-vs-pintu-lipat/): Panduan komparasi persection vs folding door, ruang parkir panel, dan efisiensi biaya.
+- [Simulasi Estimasi Biaya RAB](https://partisiruangrapat.web.id/harga/): Kalkulator estimasi biaya pemasangan partisi ruang rapat per meter persegi.

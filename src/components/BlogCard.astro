@@ -1,0 +1,96 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Calendar, User, ArrowRight } from '@lucide/astro';
+
+interface Props {
+  artikel: CollectionEntry<'artikel'>;
+}
+
+const { artikel } = Astro.props;
+const { title, description, tipe, aplikasi, image, date, author } = artikel.data;
+const href = `/blog/${artikel.id}/`;
+
+const formattedDate = new Intl.DateTimeFormat('id-ID', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric'
+}).format(date);
+---
+
+<div class="glass-panel rounded-2xl p-5 sm:p-6 border border-white/10 hover:border-[#00e5ff]/40 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 shadow-xl">
+  <div>
+    <!-- Gambar Cover Blog Rasio Standar 4:3 -->
+    {image && (
+      <a
+        href={href}
+        class="block relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-5 border border-white/10 hover:border-[#00e5ff]/50 bg-black/40 group/img transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#00e5ff] cursor-pointer"
+        title={`Baca artikel: ${title}`}
+      >
+        <img
+          src={image}
+          alt={title}
+          class="w-full h-full object-cover group-hover:scale-105 group-hover/img:scale-105 transition-transform duration-500"
+          loading="lazy"
+          width="600"
+          height="450"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#070e1e]/90 via-[#070e1e]/20 to-transparent"></div>
+        
+        {tipe && (
+          <div class="absolute top-3 left-3">
+            <span class="text-[10px] font-mono tracking-wider font-bold text-[#00e5ff] uppercase px-2.5 py-1 rounded bg-[#070e1e]/90 backdrop-blur-md border border-[#00e5ff]/30 shadow-md">
+              {tipe}
+            </span>
+          </div>
+        )}
+
+        <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-slate-300">
+          <span class="px-2 py-0.5 rounded bg-[#070e1e]/80 border border-white/10 backdrop-blur-md inline-flex items-center gap-1.5 text-slate-300">
+            <Calendar class="w-3 h-3 text-[#00e5ff] shrink-0" />
+            <span>{formattedDate}</span>
+          </span>
+        </div>
+      </a>
+    )}
+
+    <!-- Kategori & Tag Sektor -->
+    <div class="flex items-center gap-2 mb-3">
+      {aplikasi && (
+        <span class="text-[10px] font-mono uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded border border-emerald-500/20">
+          Sektor {aplikasi}
+        </span>
+      )}
+      <span class="text-[10px] font-mono uppercase tracking-wider text-[#00e5ff] bg-[#00e5ff]/10 px-2 py-0.5 rounded">
+        Edukasi
+      </span>
+    </div>
+
+    <!-- Judul Artikel -->
+    <a href={href} class="block group/link">
+      <h3 class="text-base sm:text-lg font-bold text-white group-hover/link:text-[#00e5ff] transition-colors line-clamp-2 leading-snug">
+        {title}
+      </h3>
+    </a>
+
+    <!-- Deskripsi Singkat -->
+    <p class="text-xs text-slate-300 mt-2.5 leading-relaxed line-clamp-3">
+      {description}
+    </p>
+  </div>
+
+  <!-- Footer Card: Penulis & Link CTA -->
+  <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono">
+    <div class="flex items-center gap-1.5 text-slate-400 truncate max-w-[150px]">
+      <User class="w-3.5 h-3.5 text-[#00e5ff] shrink-0" />
+      <span class="truncate">{author}</span>
+    </div>
+
+    <a
+      href={href}
+      class="inline-flex items-center gap-1 text-[#00e5ff] hover:text-white font-medium group/btn transition-colors shrink-0"
+    >
+      <span>Baca Selengkapnya</span>
+      <ArrowRight class="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+    </a>
+  </div>
+</div>
