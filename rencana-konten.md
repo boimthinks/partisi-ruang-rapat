@@ -111,7 +111,7 @@ Status: [Prioritas Utama Blog]
 7. Panduan Menjaga Kerahasiaan Rapat Direksi dan Negosiasi Bisnis dari Kebocoran Suara ke Koridor
 
 #### Kluster B: Monetisasi & Peningkatan Okupansi Sektor Perhotelan (MICE)
-8. Mengapa Pengelola Ballroom Hotel Wajib Menghindari Pemasangan Rel di Permukaan Lantai
+8. Mengapa Pengelola Ballroom Hotel Wajib Menghindari Pemasangan Rel di Permukaan Lantai [Terbit] (`/blog/mengapa-ballroom-hotel-hindari-rel-lantai/`)
 9. Rahasia Mencegah Komplain Suara Musik Bocor Antar Dua Acara Berbeda yang Berlangsung Bersamaan
 10. Efisiensi Jam Kerja Staf Banquet: Cara Mempercepat Pergantian Susunan Ruang Ballroom Multi-Event
 11. Inspirasi Desain Interior Penyekat Ruangan Mewah untuk Function Room Hotel Modern

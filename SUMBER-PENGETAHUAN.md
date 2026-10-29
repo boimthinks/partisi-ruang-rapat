@@ -238,6 +238,7 @@ Berikut adalah daftar artikel yang telah terbit dan aktif di website:
 3. `/blog/cara-hotel-maksimalkan-okupansi-ballroom-hari-kerja/` (Cara Hotel Maksimalkan Okupansi Ballroom Hari Kerja)
 4. `/blog/tanda-ruang-rapat-kantor-bocor-suara/` (5 Tanda Ruang Rapat Kantor Bocor Suara dan Cara Mengatasinya)
 5. `/blog/simulasi-biaya-pasang-partisi-ruang-rapat/` (Simulasi Biaya Pasang Partisi Ruang Rapat Kedap Suara)
+6. `/blog/mengapa-ballroom-hotel-hindari-rel-lantai/` (Mengapa Ballroom Hotel Wajib Hindari Rel Partisi Lantai)
 
 ### B. Rubrik Teknis (`/teknis/`)
 1. `/teknis/analisis-beban-balok-baja-wf-partisi-geser/` (Analisis Beban Balok Baja WF Partisi Geser Ruang Rapat)
