@@ -106,7 +106,7 @@ Status: [Prioritas Utama Blog]
 
 #### Kluster A: Efisiensi Biaya & Produktivitas Perkantoran Modern
 4. Strategi Menata Meeting Room Modular agar Tidak Boros Biaya Sewa Gedung Per Meter Persegi [Terbit] (`/blog/strategi-ruang-rapat-modular-hemat-sewa/`)
-5. Mengapa Konsep Open-Plan Office Tetap Membutuhkan Ruang Rapat Tertutup Kedap Suara
+5. Mengapa Konsep Open-Plan Office Tetap Membutuhkan Ruang Rapat Tertutup Kedap Suara [Terbit] (`/blog/mengapa-kantor-open-plan-butuh-ruang-rapat-kedap-suara/`)
 6. Cara Cerdas Membagi 1 Aula Kantor Menjadi 3 Ruang Rapat Divisi Tanpa Membangun Tembok Permanen
 7. Panduan Menjaga Kerahasiaan Rapat Direksi dan Negosiasi Bisnis dari Kebocoran Suara ke Koridor
 
