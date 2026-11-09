@@ -14,6 +14,11 @@ Website spesialis niche **Partisi Ruang Rapat** (Peredam Suara, Partisi Geser Mo
 ## Alur Kerja Otomatis: "Buat Konten Apa Kita Hari Ini"
 Jika pengguna mengirim instruksi seperti **"buat konten apa kita hari ini"** (atau pertanyaan serupa tentang konten yang harus dibuat hari ini), AI Agent WAJIB mengikuti alur kerja berikut:
 
+0. **Pembacaan Dokumen Wajib (Tanpa Perlu Diminta)**:
+   - Sebelum menjawab atau mengusulkan apa pun, AI Agent **WAJIB membaca ulang** file `AGENTS.md` ini dan file `rencana-konten.md` secara utuh pada setiap sesi/permintaan baru.
+   - Aturan ini bersifat mutlak: **dilarang** menjawab pertanyaan konten hari ini hanya berdasarkan ingatan, asumsi, atau konteks percakapan sebelumnya. Jika kedua file belum dibaca pada giliran tersebut, AI Agent belum boleh menjawab.
+   - Jika salah satu file tidak ditemukan atau tidak dapat dibaca, laporkan kepada pengguna dan jangan mengarang daftar judul.
+
 1. **Pemeriksaan Status Konten**:
    - Buka dan baca file `rencana-konten.md`.
    - Periksa file yang sudah ada di `src/content/artikel/` untuk melihat judul mana saja yang sudah terbit dan mana yang belum dibuat.

@@ -32,6 +32,12 @@ Status: [Prioritas Utama]
    - **Target Persona:** Estimator, Kontraktor Interior, Pengelola Gedung.
    - **Status:** [Terbit] (`/teknis/cara-kerja-mechanical-jack-partisi-geser/`)
 
+4. **Topik Tambahan (Sistem Suspensi):**
+   - **Judul:** Rekayasa Sistem Rel Gantung Partisi Ruang Rapat Akustik
+   - **Fokus Inti:** Konstruksi rel gantung tanpa rel lantai, penyaluran beban ke struktur atas, dan keunggulan estetika serta keselamatan lantai.
+   - **Target Persona:** Arsitek, Kontraktor Struktur, Pengelola Gedung.
+   - **Status:** [Terbit] (`/teknis/sistem-rel-gantung/`)
+
 ---
 
 ### Backlog Konten Teknis (27 Judul Berikutnya)
@@ -107,11 +113,12 @@ Status: [Prioritas Utama Blog]
 #### Kluster A: Efisiensi Biaya & Produktivitas Perkantoran Modern
 4. Strategi Menata Meeting Room Modular agar Tidak Boros Biaya Sewa Gedung Per Meter Persegi [Terbit] (`/blog/strategi-ruang-rapat-modular-hemat-sewa/`)
 5. Mengapa Konsep Open-Plan Office Tetap Membutuhkan Ruang Rapat Tertutup Kedap Suara [Terbit] (`/blog/mengapa-kantor-open-plan-butuh-ruang-rapat-kedap-suara/`)
-6. Cara Cerdas Membagi 1 Aula Kantor Menjadi 3 Ruang Rapat Divisi Tanpa Membangun Tembok Permanen
-7. Panduan Menjaga Kerahasiaan Rapat Direksi dan Negosiasi Bisnis dari Kebocoran Suara ke Koridor
+6. Cara Cerdas Membagi 1 Aula Kantor Menjadi 3 Ruang Rapat Divisi Tanpa Membangun Tembok Permanen [Terbit] (`/blog/cara-cerdas-membagi-aula-kantor-jadi-3-ruang-rapat/`)
+7. Panduan Menjaga Kerahasiaan Rapat Direksi dan Negosiasi Bisnis dari Kebocoran Suara ke Koridor [Terbit] (`/blog/privasi-rapat-direksi-bebas-kebocoran-suara-koridor/`)
+8. Strategi Menata Ruang Training Kantor Menjadi Aula Serbaguna [Terbit] (`/blog/strategi-menata-ruang-training-center-perbankan/`)
 
 #### Kluster B: Monetisasi & Peningkatan Okupansi Sektor Perhotelan (MICE)
-8. Mengapa Pengelola Ballroom Hotel Wajib Menghindari Pemasangan Rel di Permukaan Lantai [Terbit] (`/blog/mengapa-ballroom-hotel-hindari-rel-lantai/`)
+9. Mengapa Pengelola Ballroom Hotel Wajib Menghindari Pemasangan Rel di Permukaan Lantai [Terbit] (`/blog/mengapa-ballroom-hotel-hindari-rel-lantai/`)
 9. Rahasia Mencegah Komplain Suara Musik Bocor Antar Dua Acara Berbeda yang Berlangsung Bersamaan
 10. Efisiensi Jam Kerja Staf Banquet: Cara Mempercepat Pergantian Susunan Ruang Ballroom Multi-Event
 11. Inspirasi Desain Interior Penyekat Ruangan Mewah untuk Function Room Hotel Modern

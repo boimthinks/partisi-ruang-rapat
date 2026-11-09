@@ -211,7 +211,7 @@ Data master tersimpan di `src/data/autolinks.ts`. Berikut ringkasan kamus kata k
    - `/harga/`: `harga partisi ruang rapat`, `harga partisi geser`, `biaya pasang partisi`, `harga movable wall`, `estimasi rab partisi`.
    - `/teknis/material-akustik-60db/`: `peredam suara 60 db`, `rockwool 80 kg/m3`, `material akustik partisi`, `standar stc partisi`, `sound transmission class`.
    - `/teknis/sistem-rel-gantung/`: `partisi tanpa rel lantai`, `sistem rel gantung`, `balok gantung wf`, `rel gantung partisi`.
-5. **Wilayah / Kota (12 Lokasi):**
+5. **Wilayah / Kota (13 Lokasi):**
    - Menghubungkan variasi `partisi ruang rapat [kota]`, `partisi meeting room [kota]`, `partisi geser [kota]`, `movable wall [kota]`, `dinding partisi [kota]`, `sekat ruangan [kota]`, `penyekat ruangan [kota]`, `pembatas ruangan [kota]`, `partisi gerak [kota]`, `partisi pireki [kota]` ke masing-masing halaman:
      - `/lokasi/surabaya/`
      - `/lokasi/jakarta/`
@@ -225,6 +225,7 @@ Data master tersimpan di `src/data/autolinks.ts`. Berikut ringkasan kamus kata k
      - `/lokasi/medan/`
      - `/lokasi/ikn-nusantara/` (termasuk sinonim `balikpapan`)
      - `/lokasi/bali/` (termasuk sinonim `denpasar`)
+     - `/lokasi/lampung/` (termasuk sinonim `bandar lampung`)
 
 ---
 
@@ -240,6 +241,9 @@ Berikut adalah daftar artikel yang telah terbit dan aktif di website:
 5. `/blog/simulasi-biaya-pasang-partisi-ruang-rapat/` (Simulasi Biaya Pasang Partisi Ruang Rapat Kedap Suara)
 6. `/blog/mengapa-ballroom-hotel-hindari-rel-lantai/` (Mengapa Ballroom Hotel Wajib Hindari Rel Partisi Lantai)
 7. `/blog/mengapa-kantor-open-plan-butuh-ruang-rapat-kedap-suara/` (Mengapa Kantor Open-Plan Butuh Ruang Rapat Kedap Suara)
+8. `/blog/strategi-menata-ruang-training-center-perbankan/` (Strategi Menata Ruang Training Kantor Menjadi Aula Serbaguna)
+9. `/blog/privasi-rapat-direksi-bebas-kebocoran-suara-koridor/` (Cara Menjaga Privasi Rapat Direksi dari Kebocoran Suara)
+10. `/blog/cara-cerdas-membagi-aula-kantor-jadi-3-ruang-rapat/` (Cara Cerdas Membagi 1 Aula Kantor Jadi 3 Ruang Rapat)
 
 ### B. Rubrik Teknis (`/teknis/`)
 1. `/teknis/analisis-beban-balok-baja-wf-partisi-geser/` (Analisis Beban Balok Baja WF Partisi Geser Ruang Rapat)
